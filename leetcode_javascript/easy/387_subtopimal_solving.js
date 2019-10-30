@@ -17,6 +17,7 @@ const createCounter = arr => {
   arr.forEach(val => count[val] = (count[val] || 0) + 1);
   return count;
 }
+
 const firstUniqChar = s => {
     const arrayFromString = Array.from(s);
     const counter = createCounter(arrayFromString);

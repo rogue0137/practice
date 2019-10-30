@@ -1,5 +1,6 @@
 // 709. To Lowercase 
 // Solved? YES
+
 // Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
 // Example 1:
 
