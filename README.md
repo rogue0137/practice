@@ -8,16 +8,3 @@
 3. SOLVED? Status _(YES, NO, more detailed response)_
 4. Question w/ examples
 5. Solution(s) 
-
-
-## Problem Completion Overview
-- 121
-- 125
-- 350
-- 387
-- 463
-- 541
-- 647
-- 709 &#x2714;
-- 771 &#x2714;
-- 929
