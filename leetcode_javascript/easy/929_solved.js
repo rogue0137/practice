@@ -1,21 +1,15 @@
 // 929. Unique Email Addresses 
-// COME BACK TO https://leetcode.com/problems/unique-email-addresses/
-// SOLVED? NOT TRIED
+// SOLVED? Yes
+
+
 // Every email consists of a local name and a domain name, separated by the @ sign.
-
 // For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name.
-
 // Besides lowercase letters, these emails may contain '.'s or '+'s.
-
 // If you add periods ('.') between some characters in the local name part of an email address, mail sent there will be forwarded to the same address without dots in the local name.  For example, "alice.z@leetcode.com" and "alicez@leetcode.com" forward to the same email address.  (Note that this rule does not apply for domain names.)
-
 // If you add a plus ('+') in the local name, everything after the first plus sign will be ignored. This allows certain emails to be filtered, for example m.y+name@email.com will be forwarded to my@email.com.  (Again, this rule does not apply for domain names.)
-
 // It is possible to use both of these rules at the same time.
-
 // Given a list of emails, we send one email to each address in the list.  How many different addresses actually receive mails? 
 
- 
 
 // Example 1:
 
@@ -32,4 +26,26 @@
 // All local and domain names are non-empty.
 // Local names do not start with a '+' character.
 
-const numUniqueEmails = emails => {};
+const numUniqueEmails = emails => {
+	const emailSet = [];
+	const dotRegex = /\./g;
+	emails.forEach( email => {
+		const splitEmail = email.split('@');
+		// console.log(`split email: ${splitEmail}`);
+		const removeDot = splitEmail[0].replace(dotRegex,'');
+		// console.log(`remove dot: ${removeDot}`);
+		const removePlus = removeDot.split('+');
+		// console.log(`remove plus: ${removePlus}`);
+		const splicedBackEmail = [ removePlus[0], '@', splitEmail[1] ].join('');
+		// console.log(`new email: ${splicedBackEmail}`);
+		
+		if (!emailSet.includes(splicedBackEmail)) {
+			emailSet.push(splicedBackEmail);
+		}
+	})
+
+	return emailSet.length
+};
+
+const input = ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"];
+console.log(numUniqueEmails(input));
