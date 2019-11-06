@@ -1,8 +1,8 @@
 // AMAZON
 
 // 937. Reorder Data in Log Files
-// COME BACK TO: https://leetcode.com/problems/reorder-data-in-log-files/
-// SOLVED? Not yet tried
+// COME BACK TO: Yes
+// SOLVED? Yes
 
 
 // You have an array of logs.  Each log is a space delimited string of words.
@@ -32,29 +32,34 @@
 // logs[i] is guaranteed to have an identifier, and a word after the identifier.
 // Accepted
 
- const body = s => s.slice(s.indexOf(' ') + 1); // get the body after identifier
-  const isNumber = c => /\d/.test(c);
-
-  // if body same then compare identifier
-  const compare = (a, b) => {
-    const n = body(a).localeCompare(body(b));
-    if (n !== 0) return n;
-    return a.localeCompare(b);
-  };
-
-
 const reorderLogFiles = logs => {
 	const letterRegex = /[a-z]/i;
 	// IS IT BETTER TO USE A FOR LOOP OR USE A FILTER 
 	// TO SHOW YOU KNOW HOW TO USE IT?
-	const letterLogs = logs.filter( log => {
-		const splitLog = log.split(" "); 
-		return splitLog[1].match(letterRegex)
-	});
-	const digitLogs = logs.filter(log => {
-		splitLog = log.split(" "); 
-		return !splitLog[1].match(letterRegex)
-	});
+	// Code is 52 ms faster than 98.82% submission with for loop
+	// Code is faster than 5% of submissions with two filters
+	// const letterLogs = logs.filter( log => {
+	// 	const splitLog = log.split(" ");
+	// 	return splitLog[1].match(letterRegex)
+	// });
+	// const digitLogs = logs.filter(log => {
+	// 	const splitLog = log.split(" ");
+	// 	return !splitLog[1].match(letterRegex)
+	// });
+
+	const letterLogs = [];
+	const digitLogs = [];
+	for (const i in logs){
+		console.log(`log: ${logs[i]}`);
+		const splitLog = logs[i].split(" ");
+		console.log(`splitlog: ${splitLog}`);
+		const isLetter = splitLog[1].match(letterRegex);
+		if (isLetter) {
+			letterLogs.push(logs[i]);
+		} else {
+			digitLogs.push(logs[i]);
+		}
+	}
 
 	const logSection = ls => ls.slice(ls.indexOf(" ") + 1);
 
@@ -63,6 +68,7 @@ const reorderLogFiles = logs => {
 		// what is a better name for n? 
     	const n = logSection(ls1).localeCompare(logSection(ls2));
     	console.log(`N: ${n}`);
+
     	if (n !== 0) {
     		return n;
     	} else {
@@ -75,7 +81,7 @@ const reorderLogFiles = logs => {
 	return reorderedLog;
 };
 
-const logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"];
+const logs = ["dig1 8 1 5 1","let1 art can","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"];
 console.log(reorderLogFiles(logs));
 
 // LEARNINGS
