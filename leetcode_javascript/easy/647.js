@@ -13,4 +13,16 @@
 // Output: 1
 // Explanation: The longest continuous increasing subsequence is [2], its length is 1. 
 // Note: Length of the array will not exceed 10,000.
-const findLengthOfLCIS = nums => {};
+const findLengthOfLCIS = nums => {
+    const maxIncSeq = 1;
+    const countInSeq = 0;
+
+    for (let i in nums) {
+        console.log(nums[i]);
+
+    }
+
+    return maxIncSeq;
+};
+
+console.log(findLengthOfLCIS([1,3,5,4,7]));
