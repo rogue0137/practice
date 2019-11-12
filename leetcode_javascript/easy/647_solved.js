@@ -14,14 +14,27 @@
 // Explanation: The longest continuous increasing subsequence is [2], its length is 1. 
 // Note: Length of the array will not exceed 10,000.
 const findLengthOfLCIS = nums => {
-    const maxIncSeq = 1;
-    const countInSeq = 0;
+    let maxIncSeq = 1;
+    if (!Array.isArray(nums) || !nums.length) {
+        maxIncSeq = 0;
+    } else {
+        let prevNum;
 
-    for (let i in nums) {
-        console.log(nums[i]);
-
+        let countInSeq = 1;
+        for (let i in nums) {
+            if (i == 0 ) {
+                prevNum = nums[i];
+            } else {
+                if ( nums[i] > prevNum) {
+                    countInSeq += 1;
+                    maxIncSeq = Math.max(maxIncSeq, countInSeq);
+                } else {
+                    countInSeq = 1;
+                }
+                prevNum = nums[i];
+            }
+        }
     }
-
     return maxIncSeq;
 };
 

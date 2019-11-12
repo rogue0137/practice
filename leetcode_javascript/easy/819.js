@@ -45,3 +45,30 @@
 // cells.length == 8
 // cells[i] is in {0, 1}
 // 1 <= N <= 10^9
+
+
+const prisonAfterNDays = function(cells, N) {
+    let prev;
+    let next;
+    let iterations = 0;
+    while (iterations < N) {
+        for (let i in cells){
+            //console.log(`curr: ${cells[i]}`);
+            // console.log(`i: ${i}`);
+            prev = (i != 0 ? cells[i - 1] : null);
+            next = (i <= 7 ? cells[i + 1] : null);
+            console.log(`prev: ${prev}, next: ${next}`);
+            if ((prev === 1 && next === 1) || (prev === 0 && next === 0)) {
+                cells[i] = 1;
+            } else {
+                cells[i] = 0;
+            }
+        }
+        iterations++;
+    }
+    return cells;
+};
+
+const cells = [0,1,0,1,1,0,0,1];
+const N = 7;
+console.log(prisonAfterNDays(cells, N));
