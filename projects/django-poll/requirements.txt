@@ -4,5 +4,5 @@ Django==1.11.4
 idna==2.5
 pytz==2017.2
 requests==2.18.2
-urllib3==1.22
+urllib3==1.24.2
 virtualenv==15.1.0
