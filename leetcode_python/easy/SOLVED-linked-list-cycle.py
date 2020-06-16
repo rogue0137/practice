@@ -1,6 +1,6 @@
 # 141. Linked List Cycle
 # LINK: https://leetcode.com/problems/linked-list-cycle/
-# SOLVED? YES, idd not try using constant maemory
+# SOLVED? YES, but I not try using constant memory
 
 
 # Follow up:
