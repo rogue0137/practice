@@ -1,6 +1,5 @@
 # 1431. Kids With the Greatest Number of Candies
-# SOLVED?
-# URL: https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
+# https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
 
 class Solution:
     def kidsWithCandies(self, candies: List[int], extra_candies: int) -> List[bool]:

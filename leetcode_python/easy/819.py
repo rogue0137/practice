@@ -1,5 +1,5 @@
 # 819. Most Common Word
-# URL: https://leetcode.com/problems/most-common-word/
+# https://leetcode.com/problems/most-common-word/
 
 
 class Solution:
