@@ -1,5 +1,5 @@
-1313. Decompress Run-Length Encoded List
-https://leetcode.com/problems/decompress-run-length-encoded-list/
+# 1313. Decompress Run-Length Encoded List
+# https://leetcode.com/problems/decompress-run-length-encoded-list/
 
 class Solution:
     def decompressRLElist(self, nums: List[int]) -> List[int]:
@@ -12,5 +12,5 @@ class Solution:
             new_array = new_array + generated_array
         return new_array
 
-Runtime: 68 ms, faster than 73.81% of Python3 online submissions for Decompress Run-Length Encoded List.
-Memory Usage: 14 MB, less than 76.20% of Python3 online submissions for Decompress Run-Length Encoded List.
+# Runtime: 68 ms, faster than 73.81% of Python3 online submissions for Decompress Run-Length Encoded List.
+# Memory Usage: 14 MB, less than 76.20% of Python3 online submissions for Decompress Run-Length Encoded List.
