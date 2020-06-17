@@ -1,5 +1,5 @@
 # 238. Product of Array Except Self
-# URL: https://leetcode.com/problems/product-of-array-except-self/
+# https://leetcode.com/problems/product-of-array-except-self/
 # trick: use right and left sides
 
 class Solution:
