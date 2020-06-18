@@ -17,9 +17,9 @@ class Solution:
         # fill from right
         print(f'nums_products: {nums_products}')
         right_side_product = 1
-        reversed_len = reversed(range(len_of_nums))
-        print(f'reversed_len: {reversed_len}')
-        for i in reversed_len:
+        reversed_range = reversed(range(len_of_nums))
+        print(f'reversed_len: {reversed_range}')
+        for i in reversed_range:
             nums_products[i] = nums_products[i] * right_side_product
             right_side_product *= nums[i]
             print(f'right_side_product: {right_side_product}')

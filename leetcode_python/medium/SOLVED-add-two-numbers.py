@@ -6,7 +6,7 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-lass Solution:
+class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         # you will need three pointers; you will have to create a dummy node for the third pointer
         pointer_for_l1 = l1
@@ -20,7 +20,7 @@ lass Solution:
         # you want to ensure that at least one of the pointers will have a value
         # if one of them has a value, continue to loop
         while pointer_for_l1 != None or pointer_for_l2 != None:
-            # because you while loop looks for the current pointer, not next, compare to the pointer when looking for val
+            # because your while loop looks for the current pointer, not next, compare to the pointer when looking for val
             if pointer_for_l1 != None:
                 x = pointer_for_l1.val
             else:
