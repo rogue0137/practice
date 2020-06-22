@@ -40,10 +40,17 @@
 [Info on Arrays](../../data_structure_info/arrays/arrays.MD)
 
 Example Problems
-- 
+- [Single Number](easy/SOLVED-single-number.py)
+- [Product of Array Except Itself](medium/SOLVED-product-of-array-except-self.py)
+
 ### Hashmap
 
 _TODO: Build in python, link here_
+Components of a hashmap
+- Array
+- Hash function
+- Collision handling
+https://www.google.com/search?q=create+hashmap+using+python&oq=create+&aqs=chrome.0.69i59j69i57j69i59j0l2j69i60l3.1123j0j4&sourceid=chrome&ie=UTF-8#kpvalbx=_X0vtXou4Ho3K-gSy66boDw31
 
 ### Stacks
 
