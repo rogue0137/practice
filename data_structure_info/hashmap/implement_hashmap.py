@@ -15,7 +15,7 @@ class HashMap:
 
         for i in range(len(string_key)):
             char_code = ord(string_key[i])
-            hash_value += char_code << (i * 8)
+            hash_value += char_code 
         return hash_value
 
     def get_load_factor(self):
