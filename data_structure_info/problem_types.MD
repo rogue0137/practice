@@ -31,13 +31,16 @@
     - Greedy
 
 ## Data Structures: Diagram
-![Data Structures](data_structures.jpg)
+![Data Structures](images/data_structures.jpg)
 
 ## Data Structures: Good to Know
 
 ### Arrays
 
-[Info on Arrays](../../data_structure_info/arrays/arrays.MD)
+features
+* indexing
+* length/size
+* copying
 
 Example Problems
 - [Single Number](easy/SOLVED-single-number.py)
@@ -45,16 +48,17 @@ Example Problems
 
 ### Hashmap
 
-[Implementation of a Hashmap in Python](../../data_structure_info/hashmap/implement_hashmap.py)
 Components of a hashmap
 - Array
 - Hash function
 - Collision handling
 
+[Implementation of a Hashmap in Python](../../data_structure_info/hashmap/implement_hashmap.py)
+
+
 
 ### Stacks
 
-[Info on Stacks](../../data_structure_info/stacks/stacks.MD)
 
 Example Problems
 - 
@@ -62,21 +66,65 @@ Example Problems
 
 ### Queues
 
-[Info on Queues](../../data_structure_info/queues/queues.MD)
 
 Example Problems
 - 
 
 ### Linked Lists
 
-[Info on Linked Lists](../../data_structure_info/linked_lists/linked_lists.md)
 
 Example Problems
 - 
 
 ### Trees
 
-[Info on Trees](../../data_structure_info/trees/trees.md)
+#### Basics for a Tree
+- looks like a tree!
+- great for searching!
+- great for sorted lists!
+- one node at top! this is the root node
+- below the root are the root's children; children can have their own children
+- the root is the parent of it's children. children have only one parent
+- if two or more nodes share a parent, they are siblings
+- terminology summarized
+    - nodes
+    - root
+    - child
+    - parent
+    - siblings
+    - neighbor
+    - descendant
+    - ancestor
+    - leaf
+    - branch
+    - edge: line that connects two nodes
+    - path
+    - distance
+    - depth
+    - level
+    - width
+    - height
+    - breadth
+- if a cycle is involved, it's not a tree!
+
+_work these into the above_
+Level – A tree is partitioned into levels such a way that the root node is at level 0. Then, its immediate children are at level 1, and its immediate children are at level 2 and so on up to the terminal or leaf node.
+Degree – It is the number of subtrees of a node in a given tree.
+Depth – It is the maximum level of any node in a given tree and also known as height.
+Terminal node – The highest level node is terminal node while other nodes except terminal and root node are known as non-terminal nodes.
+
+#### Traversing Trees
+
+See [Depth First Search]() below.
+
+See [Breadth First Search]() below.
+
+
+#### Trees vs/and Graphs
+A tree is also a graph, specifically a directed acyclic graph (DAG), which has N nodes and N-1 edges.
+
+![Trees vs. Graphs](images/trees_vs_graphs.jpg)
+* from https://techdifferences.com/difference-between-tree-and-graph.html
 
 Example Problems
 - 
@@ -91,6 +139,8 @@ There are three major ways to traverse a binary tree
 - pre-order traversal: visit root, then go left, right
 - in-order traversal: used for getting the data in sorted order; visit left subtree, root, then right subtree
 - post-order traversal: useful for deletion; visit left subtree, right subtree, then root
+
+![Traversing Binary Trees](images/traversing_trees.png)
 
 #### B-Tree
 
@@ -150,6 +200,20 @@ Operations:
 
 
 ### Graphs
+
+It consists of a group of vertices (or nodes) and set of edges that connect the two vertices. Vertices on the graph is represented as point or circles and edges are shown as arcs or line segments. An edge is represented by E(v,w) where v and w are the pairs of vertices. Removal of an edge from a circuit or connected graph creates a subgraph that is a tree.
+
+Properties of a graph:
+A vertex in a graph can be connected to any number of other vertices using edges.
+An edge can be bidirected or directed.
+An edge can be weighted.
+In graph also we use various terms like adjacent vertices, path, cycle, degree, connected graph, complete graph, weighted graph, etc. Let’s understand some of these terms.
+
+Adjacent vertices – A vertex a is adjacent to vertex b if there is an edge (a,b) or (b,a).
+Path – A path from a random vertex w is an adjacent sequence of vertices.
+Cycle – It is a path where the first and last vertices are the same.
+Degree – It is a number of edges incident on a vertex.
+Connected graph – If there exists a path from a random vertex to any other vertex, then that graph is known as a connected graph.
 
 I feel like this includes a bunch of stuff 
 [more on graphs](https://www-users.cs.umn.edu/~karypis/parbook/Lectures/AG/chap10_slides.pdf)
