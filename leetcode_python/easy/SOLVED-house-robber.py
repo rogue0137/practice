@@ -32,6 +32,24 @@ class Solution:
             #FINISHED LOOPING: P: 4, C: 2
         return max(prev_max_val, curr_max_val)
 
+
+## Annat's amazing solution
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        two_houses_ago = 0
+        one_house_ago = 0
+        
+        for i in range(len(nums)):
+            rob_the_house = two_houses_ago + nums[i]
+            skip_the_house = one_house_ago
+            
+            two_houses_ago = one_house_ago
+            one_house_ago = max(rob_the_house, skip_the_house)
+            
+        
+        return max(two_houses_ago, one_house_ago)
+
+
 # With temp variables: these are more performant than the solution that using python non-temp variable magic
 class Solution:
     def rob(self, nums: List[int]) -> int:
