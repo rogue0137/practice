@@ -1,5 +1,38 @@
-# With temp variables: these are more performant than the solution that using python non-temp variable magic
+# 198. House Robber
+# https://leetcode.com/problems/house-robber/
 
+# WWC SF Workthrough
+# Do this solution and literally loop through everything in the comments
+# this is the final version my group got to; you should reset the values from the first iteration
+# HOUSE VALUES -> [1,2,3,1]
+# OUTPUT = 4
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        prev_prev_max_val = 0 # two house before current one's value
+        prev_max_val = 0 # one house before current one's value
+        curr_max_val = 0 # curr one's value
+        # use float('inf') / float('-inf') if not all house values were positive
+
+        for cur_house_val in nums: # house: 4 
+            # cur_house_val = 1
+            # STORE INFO FOR LATER
+            temp_curr_max_val = curr_max_val # 4
+            temp_prev_max_val = prev_max_val # 2
+            
+            # START RESETTING
+            # prev_prev_max_val + cur_house_val = 1 + 1 = 2
+            # prev_max_val + cur_house_val = 2 + 1 = 1
+            curr_max_val =  max(prev_prev_max_val + cur_house_val, prev_max_val + cur_house_val)
+            # curr_max_val = 2
+            prev_max_val = temp_curr_max_val # 4
+            prev_prev_max_val = temp_prev_max_val # 2 
+            # pp: 2, p: 4, c: 2
+            
+            #FINISHED LOOPING: P: 4, C: 2
+        return max(prev_max_val, curr_max_val)
+
+# With temp variables: these are more performant than the solution that using python non-temp variable magic
 class Solution:
     def rob(self, nums: List[int]) -> int:
         prev_prev_max_val = 0
