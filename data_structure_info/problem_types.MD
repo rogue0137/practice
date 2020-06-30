@@ -136,10 +136,11 @@ Basically a tree where the nodes can have at most two children.
 - You _traverse_ a binary tree. 
 - Recursion is useful when traversing a binary tree.
 There are three major ways to traverse a binary tree
-- pre-order traversal: visit root, then go left, right
-- in-order traversal: used for getting the data in sorted order; visit left subtree, root, then right subtree
-- post-order traversal: useful for deletion; visit left subtree, right subtree, then root
+- pre-order traversal: Root, Left, Right
+- in-order traversal: used for getting the data in sorted order; Left, Root, Right
+- post-order traversal: useful for deletion; Left, Right, Root
 
+It's pretty easy to do traversal recursively; however, when the depth of the tree is too large, we might suffer from stack overflow! That's one of the main reasons why we would want to solve a tree problem iteratively sometimes. When using an interative solution, stacks are super useful.
 ![Traversing Binary Trees](images/traversing_trees.png)
 
 #### B-Tree
