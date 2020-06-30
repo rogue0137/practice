@@ -45,8 +45,6 @@ class Solution:
             
             two_houses_ago = one_house_ago
             one_house_ago = max(rob_the_house, skip_the_house)
-            
-        
         return max(two_houses_ago, one_house_ago)
 
 

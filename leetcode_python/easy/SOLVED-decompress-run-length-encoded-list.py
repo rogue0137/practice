@@ -14,3 +14,16 @@ class Solution:
 
 # Runtime: 68 ms, faster than 73.81% of Python3 online submissions for Decompress Run-Length Encoded List.
 # Memory Usage: 14 MB, less than 76.20% of Python3 online submissions for Decompress Run-Length Encoded List.
+
+class Solution:
+    def decompressRLElist(self, nums: List[int]) -> List[int]:
+        decompressed_list = []
+        for i in range(0, len(nums), 2):
+            freq = nums[i]
+            val = nums[i + 1]
+            generated_array = [val] * freq
+            decompressed_list.extend(generated_array)
+        return decompressed_list
+
+# Runtime: 68 ms, faster than 74.81% of Python3 online submissions for Decompress Run-Length Encoded List.
+# Memory Usage: 14 MB, less than 50.32% of Python3 online submissions for Decompress Run-Length Encoded List.
