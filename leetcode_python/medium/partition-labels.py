@@ -1,2 +1,2 @@
-763. Partition Labels
-https://leetcode.com/problems/partition-labels/
+# 763. Partition Labels
+# https://leetcode.com/problems/partition-labels/
