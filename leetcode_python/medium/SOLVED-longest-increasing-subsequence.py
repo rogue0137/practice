@@ -21,9 +21,10 @@ from typing import List
 #                         highest_num = nums[j]
 #                         num_plus.append(highest_num)
 #             array_of_all_subsequences.append(num_plus)
-#         # get max of array of all subsequences
-#         max_lis = max(array_of_all_subsequences, key=lambda x: len(x))# e.g if caching array [1, 2, 5, 4], output is 5
-#         len_max_lis = len(max_lis)
+#         # get longest of array of all subsequences
+#         longest_lis = max(array_of_all_subsequences, key=lambda x: len(x))
+          # count how many are in the longest_lis
+#         len_max_lis = len(longest_lis)
 #         return len_max_lis
 
 class Solution:

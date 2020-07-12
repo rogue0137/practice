@@ -1,7 +1,44 @@
 # 198. House Robber
 # https://leetcode.com/problems/house-robber/
 
-# WWC SF Workthrough
+# WWC SF Workthrough 7/9
+# https://leetcode.com/problems/house-robber/submissions/
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        # 1. access the length of the array
+        len_arr = len(nums) # 4
+        # 2. potential final value 1
+        max_val_two_houses_ago = 0
+        # 3. potential final value 2
+        max_val_one_house_ago = 0
+                    
+        # 4. loop
+        for i in range(len_arr): 
+            cur_house_val = nums[i] # 1 --> 3 --> 2 --> 1
+​
+            # 5. within loop, max or min: MAX here 
+            # 6. you'll usually have at least two of these
+            # -- DP below: we are repeating a mathematical equation
+            #    to find out answer
+            
+            # 1 + 1 --> 1 + 3 --> 0 + 2 --> 0 + 1
+            rob_cur_house = max_val_two_houses_ago + cur_house_val
+            # 4 --> 1 --> 1 --> 0
+            skip_cur_house = max_val_one_house_ago
+            
+            # 7. start resetting for the next loop
+            max_val_two_houses_ago = max_val_one_house_ago # 4 --> 1 --> 1 --> 0
+            # MAX 1
+            # max(2, 4) --> max(4, 1) --> max(2, 1) --> max(1, 0)
+            max_val_one_house_ago = max(rob_cur_house, skip_cur_house) # 4 --> 4 --> 2 --> 1
+            
+            
+        # MAX 2
+        # max(4, 4)
+
+
+
+# WWC SF Workthrough 6/25
 # Do this solution and literally loop through everything in the comments
 # this is the final version my group got to; you should reset the values from the first iteration
 # HOUSE VALUES -> [1,2,3,1]
@@ -12,7 +49,7 @@ class Solution:
         prev_prev_max_val = 0 # two house before current one's value
         prev_max_val = 0 # one house before current one's value
         curr_max_val = 0 # curr one's value
-        # use float('inf') / float('-inf') if not all house values were positive
+        # ?:use float('inf') / float('-inf') if not all house values were positive
 
         for cur_house_val in nums: # house: 4 
             # cur_house_val = 1
