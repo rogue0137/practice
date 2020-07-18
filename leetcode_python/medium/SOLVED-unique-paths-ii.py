@@ -1,8 +1,6 @@
 # 63. Unique Paths II
 # https://leetcode.com/problems/unique-paths-ii/
 
-# WTF
-# watch videos first
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         m = len(obstacleGrid) # number of rows
