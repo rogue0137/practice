@@ -2,12 +2,7 @@
 # 72. Edit Distance
 
 class Solution:
-    def minDistance(self, word1, word2):
-        """
-        :type word1: str
-        :type word2: str
-        :rtype: int
-        """
+     def minDistance(self, word1: str, word2: str) -> int:
         # get len
         cols = len(word1)
         m = len(word2)

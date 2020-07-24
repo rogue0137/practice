@@ -6,7 +6,7 @@ class Solution:
         # create grid
         # m = total columns
         # n = total rows
-        grid = [[0]*m] * n
+        grid = [[0]* m for _ range(n)]
 
         # fill out first column, column at index 0
         for i in range(n):
