@@ -2,14 +2,9 @@
 # 72. Edit Distance
 
 class Solution:
-    def minDistance(self, word1, word2):
-        """
-        :type word1: str
-        :type word2: str
-        :rtype: int
-        """
+    def minDistance(self, word1: str, word2: str) -> int:
         # get len
-        cols = len(word1)
+        n = len(word1)
         m = len(word2)
         
         # if one of the strings is empty
@@ -19,7 +14,7 @@ class Solution:
         # create grid
         # how many columns = [0] * (m + 1)
         # how many rows with the above columns = for _ in range(n + 1)
-        d = [ [0] * (m + 1) for _ in range(cols + 1)]
+        d = [ [0] * (m + 1) for _ in range(n + 1)]
         
         # fill in first col (2nd number doesn't change; always 0)
         for i in range(n + 1):
