@@ -27,6 +27,9 @@ class Solution:
         while p_of_A < lenA and p_of_B < lenB:
             startA, endA = A[p_of_A]
             startB, endB = B[p_of_B]
+            #################################
+            # REMOVE BELOW WHEN STARTING OVER
+            #################################
             # starts same
             if startA == startB:
                 # check ends
