@@ -11,12 +11,9 @@ class Solution:
         lenA = len(A)
         # len of B
         lenB = len(B)
-        # where does A overlap with B
-        # mark index w/in list
-        # p1 = 4
-        p_of_A = 0
+        idx_of_A = 0
         # p2 = 4
-        p_of_B = 0
+        idx_of_B = 0
 
         # overlaps
         overlap = []
@@ -24,52 +21,26 @@ class Solution:
         # where does that overlap end?
 
         # while p1 < len of A and p2 < len of B 
-        while p_of_A < lenA and p_of_B < lenB:
-            startA, endA = A[p_of_A]
-            startB, endB = B[p_of_B]
-            #################################
-            # REMOVE BELOW WHEN STARTING OVER
-            #################################
-            # starts same
-            if startA == startB:
-                # check ends
-                if endA > endB:
-                    overlap.append([startA, endB])
-                    p_of_B += 1
-                elif endA == endB:
-                    overlap.append([startA, endA])
-                    p_of_A += 1
-                    p_of_B += 1
-                else: #endB bigger
-                    overlap.append([startA, endB])
-                    p_of_B += 1
-            # startA is bigger
-            if startA > startB:
-                # look at end B
-                if startA > endB:
-                    # start is before end, no overlay
-                    p_of_B += 1
-                elif startA == endB:
-                    overlap.append([startA, endB])
-                    p_of_B += 1
-                else: # startA < endB
-                    # no overlap
-                    p_of_B += 1
-            # startB is bigger
-            if startA < startB:
-                # look at end A
-                # startB bigger than endA
-                if startB > endA:
-                    # no overlay
-                    p_of_A += 1
-                elif startB == endA:
-                    overlap.append([startB, endA])
-                    p_of_A += 1
-                else: # startB < endA
-                    # startB smaller than endA
-                    p_of_ += 1
+        while idx_of_A < lenA and idx_of_B < lenB:
+            startA, endA = A[idx_of_A]
+            startB, endB = B[idx_of_B]
+            curr_start = max(startA, startB)
+            curr_end = min(endA, endB)
+            # curr_start vs. curr_end
+            if curr_start <= curr_end:
+                interval = [curr_start, curr_end]
+                overlap.append(interval)
+            # verify which end is less
+            # move that end over one
+            if endA < endB:
+                idx_of_A += 1
+            else:
+                idx_of_B += 1
+
         return overlap
 
+# Runtime: 156 ms, faster than 88.04% of Python3 online submissions for Interval List Intersections.
+# Memory Usage: 14.3 MB, less than 90.00% of Python3 online submissions for Interval List Intersections.
         # start
         # ROUND 1
             # 0 -> startA, endA = 3, 5
