@@ -1,5 +1,22 @@
-104. Maximum Depth of Binary Tree
-https://leetcode.com/problems/maximum-depth-of-binary-tree/
+# 104. Maximum Depth of Binary Tree
+# https://leetcode.com/problems/maximum-depth-of-binary-tree/
+
+# iterative DFS solution
+def DFS_maxdepth(node, depth):
+    # visit node
+    if not node:
+        return 0
+
+    # go onto it's children
+    left_depth = BFS_maxdepth(node.left)
+    right_depth = BFS_maxdepth(node.right)
+
+    # pass value from original node onto children
+    max_depth = max(left_depth, right_depth) + 1
+    return max_depth
+
+# Runtime: 28 ms, faster than 99.85% of Python3 online submissions for Maximum Depth of Binary Tree.
+# Memory Usage: 15.3 MB, less than 64.87% of Python3 online submissions for Maximum Depth of Binary Tree.
 
 # this is taking the solutoin for binary-tree-level-order-traversal
 # and adding something to check the len instead of the returned tree

@@ -27,13 +27,19 @@ class Solution:
 # <--- this is DFS (preorder: node, left, right)
 class Solution:
     def hasPathSum(self, node: TreeNode, sum: int) -> bool:
-    if not node:
+        if not node:
             return False
 
-        de = [(node, sum - node.val), ]
-        while de:
-            node, curr_sum = de.pop()
+        queue = [(node, sum - node.val) ]
+        while len(queue) > 0:
+            node, curr_sum = queue.pop()
             if not node.left and not node.right and curr_sum == 0:  
+                return True
+            if node.right:
+                queue.append((node.right, curr_sum - node.right.val))
+            if node.left:
+                queue.append((node.left, curr_sum - node.left.val))
+        return False
 
 # node, curr_sum = de.pop(0)
 # if node.left: de.append(node.left, curr_sum - node.left.val)
