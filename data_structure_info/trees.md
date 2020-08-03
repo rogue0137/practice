@@ -415,3 +415,10 @@ def postorder(node: Node) -> order:List[int]:
 |   |   |   | Anything levels  |
 
 ## Summary Diagrams
+
+### Binary Trees
+
+![Leetcode Binary Tree Traversal Image](https://leetcode.com/explore/learn/card/n-ary-tree/130/traversal/Figures/145_transverse.png)
+
+### N-ary Trees
+![Image of N-ary Tree Traversal](./N-ary_Tree_Traversal.png)
