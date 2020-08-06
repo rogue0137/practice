@@ -11,7 +11,7 @@
 
 # true question: of the avaiable pawns on the board, which are actually accessible and able to be captured by the rook
 
-
+# FIND ROOK FIRST APPROACH
 class Solution:
     def find_rook(self, board):
         R = []
@@ -87,3 +87,44 @@ class Solution:
 
 # Runtime: 32 ms, faster than 72.70% of Python3 online submissions for Available Captures for Rook.
 # Memory Usage: 13.9 MB, less than 30.43% of Python3 online submissions for Available Captures for Rook.
+
+
+# USE STRINGS APPROACH
+class Solution:
+    def numRookCaptures(self, board: List[List[str]]) -> int:
+        board_len = len(board)
+        row_len = len(board[0])
+        
+        # string conversion
+        array_of_strings = []
+        
+        # if time permits, see if rows and columns can be done at the same time
+        # rows
+        for i in range(board_len):
+            new_string = ''.join(board[i])
+            remove_dots = new_string.replace('.','')
+            array_of_strings.append(remove_dots)
+            
+        # columns   
+        for i in range(row_len):
+            new_array = []
+            for j in range(board_len):
+                new_array.append(board[j][i])
+                if j == board_len - 1:
+                    new_string = ''.join(new_array)
+                    remove_dots = new_string.replace('.','')
+                    array_of_strings.append(remove_dots)
+        
+        
+        capturable_pawns = 0
+        # loop through array of strings
+        for string in array_of_strings:
+            # if pR or Rp found, increment 
+            if 'pR' in string: 
+                capturable_pawns += 1
+            if 'Rp' in string:
+                capturable_pawns += 1
+        
+        return capturable_pawns
+# Runtime: 32 ms, faster than 72.70% of Python3 online submissions for Available Captures for Rook.
+# Memory Usage: 14 MB, less than 13.04% of Python3 online submissions for Available Captures for Rook.

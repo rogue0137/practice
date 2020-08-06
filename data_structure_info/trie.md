@@ -3,6 +3,9 @@
 https://leetcode.com/problems/implement-trie-prefix-tree/
 
 ```python
+"""
+Another way of implementing `is_word_end` would be to include a special character at the end of the word and then search for that in the search function. 
+"""
 class Trie:
 
     def __init__(self):
@@ -22,7 +25,7 @@ class Trie:
                 node.children[char] = Trie()
             node = node.children[char]
         # When you get to the last node of the word
-        # Mark that node as the end of the word
+        # mark that node as the end of the word
         node.is_word_end = True
 
     def search(self, word: str) -> bool:
