@@ -1,6 +1,14 @@
 # System Design Cheetsheet
 
 
+## Parts of a System Design Interview
+1. Outline use cases and constraints
+2. Create a high level design
+3. Design core components 
+    - show example request/response
+4. Scale out design
+
+--- fix stuff below
 ## To Do
     1. Clarify functional requirements
     2. Clarify non-functional requirements
@@ -67,3 +75,15 @@ write-back cache: only updates the cache with the write, then every X minutes it
 
 caches can become stale if they don't get updated often enough
 viewcount is an OK stale cache; the data for that does not need to be 100% correct at all time; however, comments should always show most updated (what if someone responded to a comment that is not changed forit, but once the stale cache got updated, it's different! unacceptable)
+
+eviction policy: how do you get rid of stale data? ex. LRU cache
+
+load balancers can route to specific paths; ex. services
+
+
+Pubs and Subs don't really know about each other; all they know about are the Topics (which are in between the P and S)
+pub-subs maintain order message was received
+some pubsubs enable you to "rewind" to a specific message
+
+subscribers can filter for specific messages
+ex. of a pub-sub system --> "apache kafka"
