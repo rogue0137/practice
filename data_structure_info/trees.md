@@ -42,8 +42,10 @@
 
 #### Leetcode problems
 - [EASY: Find All the Lonely Nodes](https://leetcode.com/problems/find-all-the-lonely-nodes) -- [my solution](../leetcode_python/easy/SOLVED-find-all-the-lonely-nodes.py)
-- [MEDIUM: Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/) -- [my solution]()
+- [MEDIUM: Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/) -- [my solution](../leetcode-python/medium/SOLVED-binary-tree-order-traversal.py)
+- [MEDIUM: N-ary Tree Level Order Problem](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) -- [my solution](../leetcode-python/medium/SOLVED-n-ary-tree-order-traversal.py)
 - [MEDIUM: Max depth DFS problem](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: BFS bottom solution](../leetcode-python/medium/SOLVED-number-of-islands.py)
 
 _not BFS but good to know so you can make sure you understand it_: [EASY: SYMMETRIC TREE](https://leetcode.com/problems/symmetric-tree/) -- [my solution](../leetcode_python/easy/SOLVED-symmetric-tree.py)
 
@@ -127,6 +129,9 @@ def levelOrder(self, node: 'Node') -> List[List[int]]:
     - [preorder](#preorder)
     - [postorder](#postorder)
 
+#### Uncatecategorized DFS Leetcode problems
+- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: top is DFS](../leetcode-python/medium/SOLVED-number-of-islansd.py)
+
 ### PRE-ORDER
 - "top-down" approach when executed recursively
 - uses: stack and array
@@ -134,7 +139,8 @@ def levelOrder(self, node: 'Node') -> List[List[int]]:
 
 #### Pre-order Leetcode Problems
 
-- [Binary Tree Preorder Problem](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+- [MEDIUM: Binary Tree Preorder Problem](https://leetcode.com/problems/binary-tree-preorder-traversal/) -- [my solution](../leetcode-python/medium/SOLVED-binary-tree-preorder-traversal.py)
+- [MEDIUM: Path Sum II](https://leetcode.com/problems/path-sum-ii/) -- [my solution](../leetcode-python/medium/SOLVED-path-sum-ii.py)
 
 #### Pre-order binary tree recursive solution
 ```python
@@ -252,7 +258,7 @@ L3:                4  5  6  7
 
 ### Leetcode Porblems
 
-- [Binary Tree In-order Problem](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+- [MEDIUM: Binary Tree In-order Problem](https://leetcode.com/problems/binary-tree-inorder-traversal/) -- [my solution](../leetcode-python/medium/binary-tree-inorder-traversal.py)
 
 ### In-order Binary Tree
 #### binary tree recursive solution
@@ -300,6 +306,8 @@ def DFS_inorder(node):
 - [EASY: Leaf Similar Trees ](https://leetcode.com/problems/leaf-similar-trees) -- [my solution](../leetcode_python/easy/SOLVED-leaf-similar-trees.py)
 - [EASY: Maximum depth of a binary tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) -- [my solution: top is DFS](../leetcode_python/easy/SOLVED-maximum-depth-of-binary-tree.py)
 - [EASY: Minimum depth of a binary tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/) -- [my solution](../leetcode_python/easy/SOLVED-minimum-depth-of-binary-tree.py)
+- [MEDIUM: Sum of Nodes with Even Valued Grandparents](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/) -- [my solution](../leetcode-python/medium/SOLVED-sum-of-nodes-with-even-valued-grandparents.py)
+- [MEDIUM: House Robber III](https://leetcode.com/problems/house-robber-iii/) - [my solution](../leetcode-python/medium/SOLVED-house-robber-iii.py)
 - [HARD: Binary tree postorder problem](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
 - [HARD: Binary Tree Maximum Path Sum]() -- [my solution]()
 - [HARD: Binary Tree Postorder Traversal]() -- []()
