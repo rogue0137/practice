@@ -309,8 +309,8 @@ def DFS_inorder(node):
 - [MEDIUM: Sum of Nodes with Even Valued Grandparents](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/) -- [my solution](../leetcode-python/medium/SOLVED-sum-of-nodes-with-even-valued-grandparents.py)
 - [MEDIUM: House Robber III](https://leetcode.com/problems/house-robber-iii/) - [my solution](../leetcode-python/medium/SOLVED-house-robber-iii.py)
 - [HARD: Binary tree postorder problem](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
-- [HARD: Binary Tree Maximum Path Sum]() -- [my solution]()
-- [HARD: Binary Tree Postorder Traversal]() -- []()
+- [HARD: Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-maximum-path-sum.py)
+- [HARD: Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
 
 ### Post-order Binary Tree
 #### binary tree recursive solution
