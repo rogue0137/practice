@@ -18,7 +18,7 @@
     - Ex. [pre-order](#pre-order)
 - QUESTIONS TO DETERMINE IF TOP-DOWN IS A SOLUTION:
     - Can you determine some parameters to help the node know its answer? `YES`
-- Can you use these parameters and the value of the node itself to determine what should be the parameters passed to its children? `YES`
+    - Can you use these parameters and the value of the node itself to determine what should be the parameters passed to its children? `YES`
 
 ## Bottom-up
 - Denotes recursive solution
@@ -41,8 +41,12 @@
 - suitable for both binary and N-ary trees
 
 #### Leetcode problems
-- [Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/)
-- [Max depth DFS problem](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [EASY: Find All the Lonely Nodes](https://leetcode.com/problems/find-all-the-lonely-nodes) -- [my solution](../leetcode_python/easy/SOLVED-find-all-the-lonely-nodes.py)
+- [MEDIUM: Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/) -- [my solution]()
+- [MEDIUM: Max depth DFS problem](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+
+_not BFS but good to know so you can make sure you understand it_: [EASY: SYMMETRIC TREE](https://leetcode.com/problems/symmetric-tree/) -- [my solution](../leetcode_python/easy/SOLVED-symmetric-tree.py)
+
 
 #### binary tree recursive solution
 (does not work in leetcode, CHECK)
@@ -293,8 +297,12 @@ def DFS_inorder(node):
 - suitable for both binary and N-ary trees
 
 ### Leetcode Problems
-- [Binary tree postorder problem](https://leetcode.com/problems/binary-tree-postorder-traversal/)
-- [Code that walks through an example problem](../leetcode_python/hard/binary-tree-postorder-traversal.py)
+- [EASY: Leaf Similar Trees ](https://leetcode.com/problems/leaf-similar-trees) -- [my solution](../leetcode_python/easy/SOLVED-leaf-similar-trees.py)
+- [EASY: Maximum depth of a binary tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) -- [my solution: top is DFS](../leetcode_python/easy/SOLVED-maximum-depth-of-binary-tree.py)
+- [EASY: Minimum depth of a binary tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/) -- [my solution](../leetcode_python/easy/SOLVED-minimum-depth-of-binary-tree.py)
+- [HARD: Binary tree postorder problem](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
+- [HARD: Binary Tree Maximum Path Sum]() -- [my solution]()
+- [HARD: Binary Tree Postorder Traversal]() -- []()
 
 ### Post-order Binary Tree
 #### binary tree recursive solution

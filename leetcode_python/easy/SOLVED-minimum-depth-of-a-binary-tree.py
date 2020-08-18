@@ -13,11 +13,12 @@ from typing import List
 class Solution:
     def DFS(self, node: TreeNode, level: int, list_of_leaves: List[int]):
         children = node.right or node.left
-        if node.right:
-            self.DFS(node.right, level + 1, list_of_leaves)
         if node.left:
             self.DFS(node.left, level + 1, list_of_leaves)
             
+        if node.right:
+            self.DFS(node.right, level + 1, list_of_leaves)
+
         # REQUIREMENTS
         # 1. has no children
         if not children:
@@ -32,5 +33,5 @@ class Solution:
         return list_of_leaves[0]
 
 
-# Runtime: 80 ms, faster than 7.01% of Python3 online submissions for Minimum Depth of Binary Tree.
-# Memory Usage: 15.9 MB, less than 14.20% of Python3 online submissions for Minimum Depth of Binary Tree.
+# Runtime: 44 ms, faster than 80.27% of Python3 online submissions for Minimum Depth of Binary Tree.
+# Memory Usage: 15.9 MB, less than 10.62% of Python3 online submissions for Minimum Depth of Binary Tree.

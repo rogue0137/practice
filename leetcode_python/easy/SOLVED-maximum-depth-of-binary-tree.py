@@ -8,8 +8,8 @@ def DFS_maxdepth(node, depth):
         return 0
 
     # go onto it's children
-    left_depth = BFS_maxdepth(node.left)
-    right_depth = BFS_maxdepth(node.right)
+    left_depth = DFS_maxdepth(node.left)
+    right_depth = DFS_maxdepth(node.right)
 
     # pass value from original node onto children
     max_depth = max(left_depth, right_depth) + 1
@@ -27,7 +27,7 @@ class Solution:
         self.dfs(node, level, tree_order)
         tree_depth = len(tree_order)
         return tree_depth
-    # depth first search
+    # depth first search??? think more 
     def dfs(self, node, level, tree_order):
         if not node:
             return
