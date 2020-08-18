@@ -40,7 +40,7 @@
 - uses: queue, array
 - suitable for both binary and N-ary trees
 
-#### Leetcode problems
+#### BFS Leetcode problems
 - [EASY: Find All the Lonely Nodes](https://leetcode.com/problems/find-all-the-lonely-nodes) -- [my solution](../leetcode_python/easy/SOLVED-find-all-the-lonely-nodes.py)
 - [MEDIUM: Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/) -- [my solution](../leetcode-python/medium/SOLVED-binary-tree-order-traversal.py)
 - [MEDIUM: N-ary Tree Level Order Problem](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) -- [my solution](../leetcode-python/medium/SOLVED-n-ary-tree-order-traversal.py)
@@ -256,7 +256,7 @@ L3:                4  5  6  7
 - uses: stack and array
 - suitable for binary trees
 
-### Leetcode Porblems
+### In-order: Leetcode Porblems
 
 - [MEDIUM: Binary Tree In-order Problem](https://leetcode.com/problems/binary-tree-inorder-traversal/) -- [my solution](../leetcode-python/medium/binary-tree-inorder-traversal.py)
 
@@ -302,7 +302,7 @@ def DFS_inorder(node):
 - uses: stack, array
 - suitable for both binary and N-ary trees
 
-### Leetcode Problems
+### Post-Order Leetcode Problems
 - [EASY: Leaf Similar Trees ](https://leetcode.com/problems/leaf-similar-trees) -- [my solution](../leetcode_python/easy/SOLVED-leaf-similar-trees.py)
 - [EASY: Maximum depth of a binary tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) -- [my solution: top is DFS](../leetcode_python/easy/SOLVED-maximum-depth-of-binary-tree.py)
 - [EASY: Minimum depth of a binary tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/) -- [my solution](../leetcode_python/easy/SOLVED-minimum-depth-of-binary-tree.py)
@@ -417,6 +417,7 @@ def postorder(node: Node) -> order:List[int]:
 
 #### BFS for max depth using recursion
 
+TO-DO
 
 
 
