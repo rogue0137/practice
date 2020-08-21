@@ -34,3 +34,5 @@ class Solution:
 
 # Runtime: 104 ms, faster than 86.15% of Python3 online submissions for Merge k Sorted Lists.
 # Memory Usage: 18 MB, less than 32.63% of Python3 online submissions for Merge k Sorted Lists.
+
+# TRY THIS LATER: https://dbader.org/blog/priority-queues-in-python
