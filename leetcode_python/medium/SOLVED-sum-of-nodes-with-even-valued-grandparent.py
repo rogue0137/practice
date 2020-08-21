@@ -31,3 +31,37 @@ class Solution:
 
 # Runtime: 100 ms, faster than 94.09% of Python3 online submissions for Sum of Nodes with Even-Valued Grandparent.
 # Memory Usage: 16.9 MB, less than 99.61% of Python3 online submissions for Sum of Nodes with Even-Valued Grandparent.
+
+# ITERATIVE SOLUTION
+class Solution:
+    def sumEvenGrandparent(self, root: TreeNode) -> int:
+        
+        if not root:
+            return 0
+        
+        grandchildren_sum = 0
+
+        parent = None # root does not have parent
+        grandparent = None # root does not have grandparent
+
+        first_value_in_stack = (root, parent, grandparent)
+        stack = [ first_value_in_stack ]
+
+        # PRE-ORDER
+        # TOP --> BOTTOM
+        while stack:
+            node, parent, grandparent = stack.pop()
+
+            if grandparent and grandparent % 2 == 0:
+                grandchildren_sum += node.val
+
+            if node.left:
+                stack.append( (node.left, node.val, parent) )
+
+            if node.right:
+                stack.append( (node.right, node.val, parent) )
+
+        return grandchildren_sum
+
+# Runtime: 112 ms, faster than 54.77% of Python3 online submissions for Sum of Nodes with Even-Valued Grandparent.
+# Memory Usage: 17.2 MB, less than 59.91% of Python3 online submissions for Sum of Nodes with Even-Valued Grandparent.

@@ -7,6 +7,8 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# RECURSIVE SOLUTION
 from typing import List
 
 
@@ -35,3 +37,32 @@ class Solution:
 
 # Runtime: 44 ms, faster than 80.27% of Python3 online submissions for Minimum Depth of Binary Tree.
 # Memory Usage: 15.9 MB, less than 10.62% of Python3 online submissions for Minimum Depth of Binary Tree.
+
+
+# ITERATIVE SOLUTION
+class Solution:
+    def minDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0        
+        
+        node = root
+        depth = 1 # we're at first level
+        first_stack_input = (node, depth)
+        stack = [first_stack_input]
+        minDepth = float("inf") # infitely large number
+        
+        while stack:
+            node, depth = stack.pop()
+
+            if not node.left and not node.right:
+                minDepth = min(depth, minDepth)
+
+            if node.left:
+                stack.append((node.left, depth + 1))
+            if node.right:
+                stack.append((node.right, depth + 1))
+
+        return minDepth 
+
+# Runtime: 80 ms, faster than 11.15% of Python3 online submissions for Minimum Depth of Binary Tree.
+# Memory Usage: 15 MB, less than 78.68% of Python3 online submissions for Minimum Depth of Binary Tree.

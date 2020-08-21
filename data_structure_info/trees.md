@@ -305,8 +305,8 @@ def DFS_inorder(node):
 ### Post-Order Leetcode Problems
 - [EASY: Leaf Similar Trees ](https://leetcode.com/problems/leaf-similar-trees) -- [my solution](../leetcode_python/easy/SOLVED-leaf-similar-trees.py)
 - [EASY: Maximum depth of a binary tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) -- [my solution: top is DFS](../leetcode_python/easy/SOLVED-maximum-depth-of-binary-tree.py)
-- [EASY: Minimum depth of a binary tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/) -- [my solution](../leetcode_python/easy/SOLVED-minimum-depth-of-binary-tree.py)
-- [MEDIUM: Sum of Nodes with Even Valued Grandparents](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/) -- [my solution](../leetcode-python/medium/SOLVED-sum-of-nodes-with-even-valued-grandparents.py)
+- [EASY: Minimum depth of a binary tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/) -- [my solution](../leetcode_python/easy/SOLVED-minimum-depth-of-a-binary-tree.py)
+- [MEDIUM: Sum of Nodes with Even Valued Grandparents](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/) -- [my solution](../leetcode-python/medium/SOLVED-sum-of-nodes-with-even-valued-grandparent.py)
 - [MEDIUM: House Robber III](https://leetcode.com/problems/house-robber-iii/) - [my solution](../leetcode-python/medium/SOLVED-house-robber-iii.py)
 - [HARD: Binary tree postorder problem](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
 - [HARD: Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-maximum-path-sum.py)
