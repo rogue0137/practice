@@ -9,7 +9,7 @@
     - [pre-order cheatsheet](#pre-order)
     - [in-order cheatsheet](#in-order)
     - [post-order cheatsheet](#post-order)
-- [BFS vs DFS Diagram](#bfs-vs-dfs-diagram)
+- [BFS vs DFS Diagram](#bfs-vs-dfs-as-diagram)
 - [Summary Diagrams](#summary-diagrams)
 
 ## Top-down
@@ -41,13 +41,13 @@
 - suitable for both binary and N-ary trees
 
 #### BFS Leetcode problems
-- [EASY: Find All the Lonely Nodes](https://leetcode.com/problems/find-all-the-lonely-nodes) -- [my solution](../../leetcode_python/easy/SOLVED-find-all-the-lonely-nodes.py)
-- [MEDIUM: Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/) -- [my solution](../../leetcode-python/medium/SOLVED-binary-tree-order-traversal.py)
-- [MEDIUM: N-ary Tree Level Order Problem](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) -- [my solution](../../leetcode-python/medium/SOLVED-n-ary-tree-order-traversal.py)
+- [EASY: Find All the Lonely Nodes](https://leetcode.com/problems/find-all-the-lonely-nodes) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-find-all-the-lonely-nodes.py)
+- [MEDIUM: Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-binary-tree-level-order-traversal.py)
+- [MEDIUM: N-ary Tree Level Order Problem](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-n-ary-tree-level-order-traversal.py)
 - [MEDIUM: Max depth DFS problem](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
-- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: BFS bottom solution](../../leetcode-python/medium/SOLVED-number-of-islands.py)
+- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: BFS bottom solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-number-of-islands.py)
 
-_not BFS but good to know so you can make sure you understand it_: [EASY: SYMMETRIC TREE](https://leetcode.com/problems/symmetric-tree/) -- [my solution](../../leetcode_python/easy/SOLVED-symmetric-tree.py)
+_not BFS but good to know so you can make sure you understand it_: [EASY: SYMMETRIC TREE](https://leetcode.com/problems/symmetric-tree/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-symmetric-tree.py)
 
 
 #### binary tree recursive solution
@@ -130,7 +130,7 @@ def levelOrder(self, node: 'Node') -> List[List[int]]:
     - [postorder](#postorder)
 
 #### Uncatecategorized DFS Leetcode problems
-- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: top is DFS](../../leetcode-python/medium/SOLVED-number-of-islansd.py)
+- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: top is DFS](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-number-of-islands.py)
 
 ### PRE-ORDER
 - "top-down" approach when executed recursively
@@ -139,8 +139,8 @@ def levelOrder(self, node: 'Node') -> List[List[int]]:
 
 #### Pre-order Leetcode Problems
 
-- [MEDIUM: Binary Tree Preorder Problem](https://leetcode.com/problems/binary-tree-preorder-traversal/) -- [my solution](../../leetcode-python/medium/SOLVED-binary-tree-preorder-traversal.py)
-- [MEDIUM: Path Sum II](https://leetcode.com/problems/path-sum-ii/) -- [my solution](../../leetcode-python/medium/SOLVED-path-sum-ii.py)
+- [MEDIUM: Binary Tree Preorder Problem](https://leetcode.com/problems/binary-tree-preorder-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-binary-tree-preorder-traversal.py)
+- [MEDIUM: Path Sum II](https://leetcode.com/problems/path-sum-ii/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-path-sum-ii.py)
 
 #### Pre-order binary tree recursive solution
 ```python
@@ -258,7 +258,7 @@ L3:                4  5  6  7
 
 ### In-order: Leetcode Porblems
 
-- [MEDIUM: Binary Tree In-order Problem](https://leetcode.com/problems/binary-tree-inorder-traversal/) -- [my solution](../../leetcode-python/medium/binary-tree-inorder-traversal.py)
+- [MEDIUM: Binary Tree In-order Problem](https://leetcode.com/problems/binary-tree-inorder-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-binary-tree-inorder-traversal.py)
 
 ### In-order Binary Tree
 #### binary tree recursive solution
@@ -303,14 +303,13 @@ def DFS_inorder(node):
 - suitable for both binary and N-ary trees
 
 ### Post-Order Leetcode Problems
-- [EASY: Leaf Similar Trees ](https://leetcode.com/problems/leaf-similar-trees) -- [my solution](../../leetcode_python/easy/SOLVED-leaf-similar-trees.py)
-- [EASY: Maximum depth of a binary tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) -- [my solution: top is DFS](../../leetcode_python/easy/SOLVED-maximum-depth-of-binary-tree.py)
-- [EASY: Minimum depth of a binary tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/) -- [my solution](../../leetcode_python/easy/SOLVED-minimum-depth-of-a-binary-tree.py)
-- [MEDIUM: Sum of Nodes with Even Valued Grandparents](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/) -- [my solution](../../leetcode-python/medium/SOLVED-sum-of-nodes-with-even-valued-grandparent.py)
-- [MEDIUM: House Robber III](https://leetcode.com/problems/house-robber-iii/) - [my solution](../../leetcode-python/medium/SOLVED-house-robber-iii.py)
-- [HARD: Binary tree postorder problem](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
-- [HARD: Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) -- [my solution](../../leetcode_python/hard/SOLVED-binary-tree-maximum-path-sum.py)
-- [HARD: Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](../../leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
+- [EASY: Leaf Similar Trees ](https://leetcode.com/problems/leaf-similar-trees) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-leaf-similar-trees.py)
+- [EASY: Maximum depth of a binary tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) -- [my solution: top is DFS](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-maximum-depth-of-binary-tree.py)
+- [EASY: Minimum depth of a binary tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-minimum-depth-of-a-binary-tree.py)
+- [MEDIUM: Sum of Nodes with Even Valued Grandparents](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-sum-of-nodes-with-even-valued-grandparent.py)
+- [MEDIUM: House Robber III](https://leetcode.com/problems/house-robber-iii/) - [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-house-robber-iii.py)
+- [HARD: Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/hard/SOLVED-binary-tree-maximum-path-sum.pyy)
+- [HARD: Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
 
 ### Post-order Binary Tree
 #### binary tree recursive solution
@@ -417,7 +416,7 @@ def postorder(node: Node) -> order:List[int]:
 
 #### BFS for max depth using recursion
 
-TO-DO
+_TO-DO_
 
 
 
