@@ -44,7 +44,6 @@
 - [EASY: Find All the Lonely Nodes](https://leetcode.com/problems/find-all-the-lonely-nodes) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-find-all-the-lonely-nodes.py)
 - [MEDIUM: Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-binary-tree-level-order-traversal.py)
 - [MEDIUM: N-ary Tree Level Order Problem](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-n-ary-tree-level-order-traversal.py)
-- [MEDIUM: Max depth DFS problem](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: BFS bottom solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-number-of-islands.py)
 
 _not BFS but good to know so you can make sure you understand it_: [EASY: SYMMETRIC TREE](https://leetcode.com/problems/symmetric-tree/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-symmetric-tree.py)
