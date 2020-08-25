@@ -23,7 +23,7 @@ class Solution:
 
         return granchildren_sum
 
-    def sumEvenGrandparent(self, root: TreeNode) -> int:
+    def sumEvenGrandparent(self, root: TreeNode) -> int
         granchildren_sum = []
         self.DFS(root, granchildren_sum)
         total_sum = sum(granchildren_sum)
@@ -65,3 +65,45 @@ class Solution:
 
 # Runtime: 112 ms, faster than 54.77% of Python3 online submissions for Sum of Nodes with Even-Valued Grandparent.
 # Memory Usage: 17.2 MB, less than 59.91% of Python3 online submissions for Sum of Nodes with Even-Valued Grandparent.
+
+# FROM WWC SESSION
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def sumEvenGrandparent(self, root: TreeNode) -> int:
+        # DFS stack
+        
+        # If there are no nodes with an even-valued grandparent, return 0.
+        grandchildren_sum = 0
+        
+        # STACK! usually what you add to stack is not singular, tuples are common
+        # node: root # EVERYTING, not just .val
+        parent = None # .val
+        grandparent = None # .val
+        first_thing_in_stack = (root, parent, grandparent)
+        stack = [first_thing_in_stack]
+        
+        # while the stack exists!!
+        while stack:
+            # pop from the stack
+            node, parent, grandparent = stack.pop() # 6, None, None
+            
+            if grandparent and grandparent % 2 == 0:
+                grandchildren_sum += node.val
+                
+            # check for children
+            if node.left:
+                # node, parent, grandparent
+                # parent is already set to .val, that is why you do not need to use
+                # .val when you pass it as a grandparent
+                stack.append( (node.left, node.val, parent) )
+            if node.right:
+                # node, parent, grandparent
+                stack.append( (node.right, node.val, parent) )
+        
+        return grandchildren_sum
