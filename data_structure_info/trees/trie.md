@@ -1,5 +1,19 @@
 # Trie
 
+![Justice to what a Trie is](https://en.wikipedia.org/wiki/Trie#/media/File:Trie_example.svg)
+
+Basics
+- type of tree!
+- replaces a binary search tree or a hashmap (woah)
+- usually a type of stored associated array, where the keyes are usually strings (see the pic; explains well)
+- all the descendants of a node share a common prefix, eg. descendents with keys "alex" and "alejandra", both share the nodes "a", "al", and "ale"
+- GREAT for full text search
+
+Operations:
+- find
+- insert
+
+
 https://leetcode.com/problems/implement-trie-prefix-tree/
 
 ```python

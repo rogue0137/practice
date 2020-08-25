@@ -1,6 +1,11 @@
 # Trees
 
 **Table of Contents**
+- [Basics](#basics)
+- [Trees vs Graphs](#trees-vs-graphs)
+- [Binary Tree](#binary-tree)
+- [Heap](https://github.com/rogue0137/practice/tree/master/data_structure_info/trees/heap.md)
+- [Trie](https://github.com/rogue0137/practice/tree/master/data_structure_info/trees/trie.md)
 - ["Top-down"](#top-down)
 - ["Bottom-up"](#bottom-up)
 - [BFS](#bfs)
@@ -9,8 +14,66 @@
     - [pre-order cheatsheet](#pre-order)
     - [in-order cheatsheet](#in-order)
     - [post-order cheatsheet](#post-order)
-- [BFS vs DFS Diagram](#bfs-vs-dfs-as-diagram)
+- [BFS vs DFS Diagram](#bfs-vs-dfs-diagram)
 - [Summary Diagrams](#summary-diagrams)
+
+## Basics
+
+- looks like a tree!
+- great for searching!
+- great for sorted lists!
+- one node at top! this is the root node
+- below the root are the root's children; children can have their own children
+- the root is the parent of it's children. children have only one parent
+- if two or more nodes share a parent, they are siblings
+- terminology summarized
+    - nodes
+    - root
+    - child
+    - parent
+    - siblings
+    - neighbor
+    - descendant
+    - ancestor
+    - leaf: a node without children
+    - branch
+    - edge: line that connects two nodes
+    - path
+    - distance
+    - depth
+    - level
+    - width
+    - height
+    - breadth
+- if a cycle is involved, it's not a tree!
+
+_TODO:_
+Level – A tree is partitioned into levels such a way that the root node is at level 0. Then, its immediate children are at level 1, and its immediate children are at level 2 and so on up to the terminal or leaf node.
+Degree – It is the number of subtrees of a node in a given tree.
+Depth – It is the maximum level of any node in a given tree and also known as height.
+Terminal node – The highest level node is terminal node while other nodes except terminal and root node are known as non-terminal nodes.
+
+## Trees vs Graphs
+
+A tree is also a graph, specifically a directed acyclic graph (DAG), which has N nodes and N-1 edges.
+
+![This is a summary of Trees vs. Graphs](../../images/trees_vs_graphs.jpg). If you'd like to learn more about the differences, go [here](https://techdifferences.com/difference-between-tree-and-graph.html).
+
+For a section specificially on graphs, go [here](https://github.com/rogue0137/practice/tree/master/data_structure_info/graphs/graphs.md)
+
+## Binary Tree
+
+**Binary Tree** A tree where the nodes can have at most two children.
+-It has a _root node_. The children of that node and subsequent nodes are referred to as _left child_ and _right child_.
+- You _traverse_ a binary tree. 
+- Recursion is useful when traversing a binary tree.
+There are three major ways to traverse a binary tree
+- pre-order traversal: Root, Left, Right
+- in-order traversal: used for getting the data in sorted order; Left, Root, Right
+- post-order traversal: useful for deletion; Left, Right, Root
+
+It's pretty easy to do traversal recursively; however, when the depth of the tree is too large, we might suffer from stack overflow! That's one of the main reasons why we would want to solve a tree problem iteratively sometimes. When using an interative solution, queues and stacks are super useful.
+![Traversing Binary Trees](../../images/traversing_trees.png)
 
 ## Top-down
 - Denotes recursive solution
@@ -41,12 +104,13 @@
 - suitable for both binary and N-ary trees
 
 #### BFS Leetcode problems
-- [EASY: Find All the Lonely Nodes](https://leetcode.com/problems/find-all-the-lonely-nodes) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-find-all-the-lonely-nodes.py)
-- [MEDIUM: Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-binary-tree-level-order-traversal.py)
-- [MEDIUM: N-ary Tree Level Order Problem](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-n-ary-tree-level-order-traversal.py)
-- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: BFS bottom solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-number-of-islands.py)
+- [EASY: Find All the Lonely Nodes](https://leetcode.com/problems/find-all-the-lonely-nodes) -- [my solution](../leetcode_python/easy/SOLVED-find-all-the-lonely-nodes.py)
+- [MEDIUM: Binary Tree Level Order Problem](https://leetcode.com/problems/binary-tree-level-order-traversal/) -- [my solution](../leetcode-python/medium/SOLVED-binary-tree-order-traversal.py)
+- [MEDIUM: N-ary Tree Level Order Problem](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) -- [my solution](../leetcode-python/medium/SOLVED-n-ary-tree-order-traversal.py)
+- [MEDIUM: Max depth DFS problem](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: BFS bottom solution](../leetcode-python/medium/SOLVED-number-of-islands.py)
 
-_not BFS but good to know so you can make sure you understand it_: [EASY: SYMMETRIC TREE](https://leetcode.com/problems/symmetric-tree/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-symmetric-tree.py)
+_not BFS but good to know so you can make sure you understand it_: [EASY: SYMMETRIC TREE](https://leetcode.com/problems/symmetric-tree/) -- [my solution](../leetcode_python/easy/SOLVED-symmetric-tree.py)
 
 
 #### binary tree recursive solution
@@ -129,7 +193,7 @@ def levelOrder(self, node: 'Node') -> List[List[int]]:
     - [postorder](#postorder)
 
 #### Uncatecategorized DFS Leetcode problems
-- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: top is DFS](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-number-of-islands.py)
+- [MEDIUM: Number of Islands](https://leetcode.com/problems/number-of-islands/) - [my solution: top is DFS](../leetcode-python/medium/SOLVED-number-of-islansd.py)
 
 ### PRE-ORDER
 - "top-down" approach when executed recursively
@@ -138,8 +202,8 @@ def levelOrder(self, node: 'Node') -> List[List[int]]:
 
 #### Pre-order Leetcode Problems
 
-- [MEDIUM: Binary Tree Preorder Problem](https://leetcode.com/problems/binary-tree-preorder-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-binary-tree-preorder-traversal.py)
-- [MEDIUM: Path Sum II](https://leetcode.com/problems/path-sum-ii/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-path-sum-ii.py)
+- [MEDIUM: Binary Tree Preorder Problem](https://leetcode.com/problems/binary-tree-preorder-traversal/) -- [my solution](../leetcode-python/medium/SOLVED-binary-tree-preorder-traversal.py)
+- [MEDIUM: Path Sum II](https://leetcode.com/problems/path-sum-ii/) -- [my solution](../leetcode-python/medium/SOLVED-path-sum-ii.py)
 
 #### Pre-order binary tree recursive solution
 ```python
@@ -257,7 +321,7 @@ L3:                4  5  6  7
 
 ### In-order: Leetcode Porblems
 
-- [MEDIUM: Binary Tree In-order Problem](https://leetcode.com/problems/binary-tree-inorder-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-binary-tree-inorder-traversal.py)
+- [MEDIUM: Binary Tree In-order Problem](https://leetcode.com/problems/binary-tree-inorder-traversal/) -- [my solution](../leetcode-python/medium/binary-tree-inorder-traversal.py)
 
 ### In-order Binary Tree
 #### binary tree recursive solution
@@ -302,13 +366,14 @@ def DFS_inorder(node):
 - suitable for both binary and N-ary trees
 
 ### Post-Order Leetcode Problems
-- [EASY: Leaf Similar Trees ](https://leetcode.com/problems/leaf-similar-trees) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-leaf-similar-trees.py)
-- [EASY: Maximum depth of a binary tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) -- [my solution: top is DFS](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-maximum-depth-of-binary-tree.py)
-- [EASY: Minimum depth of a binary tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/easy/SOLVED-minimum-depth-of-a-binary-tree.py)
-- [MEDIUM: Sum of Nodes with Even Valued Grandparents](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-sum-of-nodes-with-even-valued-grandparent.py)
-- [MEDIUM: House Robber III](https://leetcode.com/problems/house-robber-iii/) - [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/medium/SOLVED-house-robber-iii.py)
-- [HARD: Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/hard/SOLVED-binary-tree-maximum-path-sum.pyy)
-- [HARD: Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](https://github.com/rogue0137/practice/blob/master/leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
+- [EASY: Leaf Similar Trees ](https://leetcode.com/problems/leaf-similar-trees) -- [my solution](../leetcode_python/easy/SOLVED-leaf-similar-trees.py)
+- [EASY: Maximum depth of a binary tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) -- [my solution: top is DFS](../leetcode_python/easy/SOLVED-maximum-depth-of-binary-tree.py)
+- [EASY: Minimum depth of a binary tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/) -- [my solution](../leetcode_python/easy/SOLVED-minimum-depth-of-a-binary-tree.py)
+- [MEDIUM: Sum of Nodes with Even Valued Grandparents](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/) -- [my solution](../leetcode-python/medium/SOLVED-sum-of-nodes-with-even-valued-grandparent.py)
+- [MEDIUM: House Robber III](https://leetcode.com/problems/house-robber-iii/) - [my solution](../leetcode-python/medium/SOLVED-house-robber-iii.py)
+- [HARD: Binary tree postorder problem](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
+- [HARD: Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-maximum-path-sum.py)
+- [HARD: Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) -- [my solution](../leetcode_python/hard/SOLVED-binary-tree-postorder-traversal.py)
 
 ### Post-order Binary Tree
 #### binary tree recursive solution
@@ -415,7 +480,7 @@ def postorder(node: Node) -> order:List[int]:
 
 #### BFS for max depth using recursion
 
-_TO-DO_
+TO-DO
 
 
 
@@ -436,4 +501,4 @@ _TO-DO_
 ![Leetcode Binary Tree Traversal Image](https://leetcode.com/explore/learn/card/n-ary-tree/130/traversal/Figures/145_transverse.png)
 
 ### N-ary Trees
-![Image of N-ary Tree Traversal](../images/N-ary_Tree_Traversal.png)
+![Image of N-ary Tree Traversal](./N-ary_Tree_Traversal.png)

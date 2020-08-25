@@ -1,5 +1,14 @@
 # Arrays
 
+features
+* indexing
+* length/size
+* copying
+
+Example Problems
+- [Single Number](easy/SOLVED-single-number.py)
+- [Product of Array Except Itself](medium/SOLVED-product-of-array-except-self.py)
+
 ## Valid Subsequence
 
 [Algo Expert Valid Subsequence](https://www.algoexpert.io/questions/Validate%20Subsequence)
