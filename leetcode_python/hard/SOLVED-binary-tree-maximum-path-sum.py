@@ -1,5 +1,6 @@
 # 124. Binary Tree Maximum Path Sum
 # https://leetcode.com/problems/binary-tree-maximum-path-sum/
+# DRAWING: https://docs.google.com/drawings/d/1cm23KVkc2n8CN6rfxlBAhhP9-wWvtWOeOEg4LYKgKKU/edit
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -9,10 +10,12 @@
 #         self.right = right
 class Solution:
     def maxPathSum(self, root: TreeNode) -> int:
-        _, running_max_path_sum = self.mps(root)
+        _, running_max_path_sum = self.dfs(root)
         return running_max_path_sum
 
-    def mps(self, node: TreeNode):
+    # DFS because you're going by path
+    # postorder because L, R, then root
+    def dfs(self, node: TreeNode):
         # IF NO NODE:
         # max_single_branch will be 0 becase there are no branches 
         # max_running_path_sum will be set to float("-inf")
@@ -21,22 +24,31 @@ class Solution:
         if not node:
             return (0, float("-inf"))
 
+        # LEFT AND RIGHT SIDES ON THEIR OWN
         # LSB: left_single_branch
         # LS: running_max_sum_for_left_side
-        LSB, LS = self.mps(node.left)
+        LSB, LS = self.dfs(node.left)
         # RSB: right_single_branch
         # RS: running_max_sum_for_right_side
-        RSB, RS = self.mps(node.right)
+        RSB, RS = self.dfs(node.right)
+
+        # IS L OR R BIGGER
         max_child_single_branch = max(LSB, RSB)
-        
+
+        # WHAT IF WE ADD THE NODE'S VALUE
+        # is the branch with node or the node by itself biggger?
+        max_single_branch = max(max_child_single_branch + node.val,
+                                node.val)
+
         # we can either have a single lateral branch as the highest sum
         # or a triangle branch
-        max_single_branch = max(
-            max_child_single_branch + node.val,
-            node.val)
+        # CHECK THE TRIANGLE BRANCH
         max_single_triangle = max(
             max_single_branch, 
             LSB + node.val + RSB)
+
+        # GET THE RUNNING SUM 
+        # FROM L AND R AND TRIANGLE
         running_max_path_sum = max(
             LS,
             RS,

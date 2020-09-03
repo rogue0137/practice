@@ -501,4 +501,4 @@ TO-DO
 ![Leetcode Binary Tree Traversal Image](https://leetcode.com/explore/learn/card/n-ary-tree/130/traversal/Figures/145_transverse.png)
 
 ### N-ary Trees
-![Image of N-ary Tree Traversal](./N-ary_Tree_Traversal.png)
+![Image of N-ary Tree Traversal](../images/N-ary_Tree_Traversal.png)
