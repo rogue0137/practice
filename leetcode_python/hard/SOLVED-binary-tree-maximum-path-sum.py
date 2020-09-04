@@ -2,6 +2,69 @@
 # https://leetcode.com/problems/binary-tree-maximum-path-sum/
 # DRAWING: https://docs.google.com/drawings/d/1cm23KVkc2n8CN6rfxlBAhhP9-wWvtWOeOEg4LYKgKKU/edit
 
+
+
+# IF YOU'RE COMING FROM WWC: THIS IS THE CODE I WROTE FROM OUR SESSION
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxPathSum(self, root: TreeNode) -> int:
+        # max_sum_of_all_branches is our max_sum from the diagram
+        # if it does not make sense why we are returning this, please spend time reading
+        #   the section in DFS where it gets set
+        max_lateral_branch, max_sum = self.DFS(root)
+        
+        return max_sum
+​
+    def DFS(self, node):
+        # Go all the way down (Depth First Search)
+        # POSTORDER: left -> right -> root
+        
+        # always need a scenario for when node does not exist
+        if not node:
+            # (max_lateral_branch, max_branches_including_triangles)
+            # Both of these should not be set to 0 because there are actual negative values int he trees
+            #   float("-inf") is equal to setting an increadibly large, 
+            #   almost infinite negative value
+            return (float("-inf"), float("-inf"))
+        
+        # start left (postorder)
+        # LTB: LEFT LATERAL BRANCH from max_lateral_branch
+        # LMIT: LEFT MAX INCLUDING LATERAL AND TRIANGLE BRANCHES from max_branches_including_triangles
+        LLB, LMIT = self.DFS(node.left)
+        
+        # then go right (postorder)
+        # RSB: RIGHT LATERAL BRANCH from max_lateral_branch
+        # RMIT: RIGHT MAX INCLUDING LATERAL AND TRIANGLE BRANCHES from max_branches_including_triangles
+        RLB, RMIT = self.DFS(node.right)
+        
+        
+        # IS LEFT OR RIGHT LATERAL BRANCH BIGGER?
+        max_child_lateral_branch = max(LLB, RLB)    
+        
+        # HAVE NOT YET EVALUATED THE NODE AT THIS LEVEL
+        # node itself is finally evaluated (postorder)
+        max_lateral_branch = max(max_child_lateral_branch + node.val, node.val)
+        
+        # ARE LATERAL BRANCHES OR TRIANGLES BIGGER?
+        # CREATE A TRIANGLE: LLB, RSB, node.val
+        curr_triangle = LLB + RLB + node.val
+        max_branch = max(max_lateral_branch, curr_triangle)
+​
+        # MAX SUM in our diagram
+        # LMIT: is the node.left child's lateral and triangle biggest?
+        # RMIT: is the node.right child's lateral and triangle biggest?
+        # max_sum_of_all_branches: is the max_branch of this one node biggest? 
+        max_sum_of_all_branches = max(LMIT, RMIT, max_branch)
+        
+        return max_lateral_branch, max_sum_of_all_branches
+
+
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
