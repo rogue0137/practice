@@ -38,3 +38,34 @@ const maxProfit = prices => {
 };
 
 console.log(maxProfit([7,1,5,3,6,4]));
+
+
+// NOT AS PRETTY AS ABOVE, BUT WORKS
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+
+var maxProfit = function(prices) {
+
+    let maxProfit = 0;
+    let minBuyPrice = 100000;
+
+    // We first sell on dayTwoPrice
+    for (let dayTwo = 1; dayTwo < prices.length; dayTwo++ ){
+
+        let newBuyPrice = prices[dayTwo - 1]; 
+        let newSellPrice = prices[dayTwo]; 
+
+        // Need to ensure that newSellPrice & maxSellPrice is AFTER minBuyPrice and newBuyPrice
+        minBuyPrice = Math.min(minBuyPrice, newBuyPrice); 
+
+
+        const newProfit = newSellPrice - minBuyPrice; 
+        maxProfit = Math.max(maxProfit, newProfit);
+    }
+
+    return maxProfit;
+    
+};
