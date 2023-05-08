@@ -17,7 +17,7 @@ Memorize how to create a linked list: [my example in python](https://github.com/
     - `while` loops are prevalent in solving many LinkedList problems
     - Linked list problems are *alllll* about pointers; many of the questions you get asked about LinkedLists will require you to have two or more pointers so you can most appropriately traverse the LinkedList(s)
     - Cycles are a thing in linked lists
-        - cycle: if two LinkedLists every become one
+        - cycle: if two LinkedLists ever become one?
         - how do you tell if it's a cycle? two-pointers of different speeds eventually meet up
 - Some things you'll get asked to do:
     - Reverse the list: this is basically switching the pointers, you'll need to create a prev for this too

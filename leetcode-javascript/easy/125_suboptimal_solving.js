@@ -35,5 +35,33 @@ const isPalindrome = s => {
 };
 
 
-
 console.log(isPalindrome("race a car"));
+
+
+// Another option
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    // strip the string of punctuation and spaces
+    const stringNoSpaces = s.replace(" ", "");
+    const stringNoPunc = stringNoSpaces.replace(/[^a-z0-9]/gi, "");
+    // lowercase all
+    const stringLower = stringNoPunc.toLowerCase();
+    // split into array
+    const arrayOfAlphaNumericChar = stringLower.split("");
+
+    // can I pop from both ends
+    while (arrayOfAlphaNumericChar.length > 1 ){
+        const frontArray = arrayOfAlphaNumericChar.shift()
+        const backArray = arrayOfAlphaNumericChar.pop();
+        if (frontArray !== backArray ) {
+            return false
+        }
+    }
+
+    return true;
+    
+};
