@@ -10,10 +10,11 @@ Memorize how to create a linked list: [my example in python](https://github.com/
 - Be able to create the following methods in your LinkedList class
     - append Node (to end of linked list)
     - insert Node (to specific place w/in linked list)
-    - get_position of Node
+    - get position of Node
     - delete Node
 - Know:
     - `curr` is key. Use it to help you figure out where you are in the LinkedList. It's used to solve most LinkedList problems
+    - `dummy` is often used to return the result 
     - `while` loops are prevalent in solving many LinkedList problems
     - Linked list problems are *alllll* about pointers; many of the questions you get asked about LinkedLists will require you to have two or more pointers so you can most appropriately traverse the LinkedList(s)
     - Cycles are a thing in linked lists
