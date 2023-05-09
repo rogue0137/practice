@@ -47,30 +47,32 @@
     - breadth
 - if a cycle is involved, it's not a tree!
 
-_TODO:_
-Level – A tree is partitioned into levels such a way that the root node is at level 0. Then, its immediate children are at level 1, and its immediate children are at level 2 and so on up to the terminal or leaf node.
-Degree – It is the number of subtrees of a node in a given tree.
-Depth – It is the maximum level of any node in a given tree and also known as height.
-Terminal node – The highest level node is terminal node while other nodes except terminal and root node are known as non-terminal nodes.
+More basis:
+- Level: A tree is partitioned into levels such a way that the root node is at level 0. Then, its immediate children are at level 1, and its immediate children are at level 2 and so on up to the terminal or leaf node.
+- Degree: It is the number of subtrees of a node in a given tree.
+- Depth: It is the maximum level of any node in a given tree and also known as height.
+- Height: It is the maximum level of any node in a given tree and also known as depth.
+- Terminal node: The highest level node is terminal node while other nodes except terminal and root node are known as non-terminal nodes.
 
 ## Trees vs Graphs
 
 A tree is also a graph, specifically a directed acyclic graph (DAG), which has N nodes and N-1 edges.
 
-![This is a summary of Trees vs. Graphs](../../images/trees_vs_graphs.jpg). If you'd like to learn more about the differences, go [here](https://techdifferences.com/difference-between-tree-and-graph.html).
+![This is a summary of Trees vs. Graphs](../images/trees_vs_graphs.jpg). If you'd like to learn more about the differences, go [here](https://techdifferences.com/difference-between-tree-and-graph.html).
 
-For a section specificially on graphs, go [here](https://github.com/rogue0137/practice/tree/master/data_structure_info/graphs/graphs.md)
+For a section specificially on graphs, go [here](../graphs/graphs.md).
 
 ## Binary Tree
 
-**Binary Tree** A tree where the nodes can have at most two children.
--It has a _root node_. The children of that node and subsequent nodes are referred to as _left child_ and _right child_.
+**Binary Tree** 
+- A tree where the nodes can have at most two children.
+- It has a _root node_. The children of that node and subsequent nodes are referred to as _left child_ and _right child_.
 - You _traverse_ a binary tree. 
 - Recursion is useful when traversing a binary tree.
-There are three major ways to traverse a binary tree
-- pre-order traversal: Root, Left, Right
-- in-order traversal: used for getting the data in sorted order; Left, Root, Right
-- post-order traversal: useful for deletion; Left, Right, Root
+- There are three major ways to traverse a binary tree.
+    - **pre-order traversal**: Root, Left, Right
+    - **in-order traversal**: used for getting the data in sorted order; Left, Root, Right
+    - **post-order traversal**: useful for deletion; Left, Right, Root
 
 It's pretty easy to do traversal recursively; however, when the depth of the tree is too large, we might suffer from stack overflow! That's one of the main reasons why we would want to solve a tree problem iteratively sometimes. When using an interative solution, queues and stacks are super useful.
 ![Traversing Binary Trees](../../images/traversing_trees.png)
