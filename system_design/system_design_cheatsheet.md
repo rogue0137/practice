@@ -1,5 +1,6 @@
 # System Design Cheetsheet
 
+__Below is still a work in progress and should not yet be used for studying__
 
 ## Parts of a System Design Interview
 1. Outline use cases and constraints
@@ -54,7 +55,7 @@ System Design Fundamentals
 - latency: the time it takes for a certain operation to complete in a system, usually measured in milliseconds or seconds
 - throughput: number of operations a system can handle properly per unit per time
 
-availability
+### Availability
 - how resistant is your sytem to failures (how fault tolerance is your system)
 - % of uptime in a year, usually very, very high percentages
 
@@ -63,23 +64,24 @@ availability
 - Redundancy: eliminate single points of failure; duplicate/triple specific parts of your system
 
 
-### CACHE
+### Cache
 
 Can cache at all levels, ex. client, server, intermediate, etc.
 - use when making a ton of network requests; if you cache the network request, it will speed up the system
 - use when getting the same DB request again and again and again; store the result in mem at each server so it doesn't have to go directly into the DB drive every time
 TODO List of key terms
+- write-to cache: in the same operation, writes it to the DB and the cache; cache and DB always in sync
+  - downside: you always have to go to the DB
+- write-back cache: only updates the cache with the write, then every X minutes it will send the info in the cache to update the DB
+- caches can become stale if they don't get updated often enough
+- viewcount is an OK stale cache; the data for that does not need to be 100% correct at all time; however, comments should always show most updated (what if someone responded to a comment that is not changed for it, but once the stale cache got updated, it's different! unacceptable)
+- eviction policy: how do you get rid of stale data? ex. LRU cache
 
-write-to cache: in the same operation, writes it to the DB and the cache; cache and DB always in sync; downside: you always have to go to the DB
-write-back cache: only updates the cache with the write, then every X minutes it will send the info in the cache to udpate the DB
 
-caches can become stale if they don't get updated often enough
-viewcount is an OK stale cache; the data for that does not need to be 100% correct at all time; however, comments should always show most updated (what if someone responded to a comment that is not changed forit, but once the stale cache got updated, it's different! unacceptable)
-
-eviction policy: how do you get rid of stale data? ex. LRU cache
-
+### Load Balancers
 load balancers can route to specific paths; ex. services
 
+### PubSub
 
 Pubs and Subs don't really know about each other; all they know about are the Topics (which are in between the P and S)
 pub-subs maintain order message was received

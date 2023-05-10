@@ -58,7 +58,7 @@ More basis:
 
 A tree is also a graph, specifically a directed acyclic graph (DAG), which has N nodes and N-1 edges.
 
-![This is a summary of Trees vs. Graphs](../images/trees_vs_graphs.jpg). If you'd like to learn more about the differences, go [here](https://techdifferences.com/difference-between-tree-and-graph.html).
+![This is a summary of Trees vs. Graphs](../images/trees_vs_graphs.jpg) If you'd like to learn more about the differences, go [here](https://techdifferences.com/difference-between-tree-and-graph.html).
 
 For a section specificially on graphs, go [here](../graphs/graphs.md).
 
@@ -75,7 +75,8 @@ For a section specificially on graphs, go [here](../graphs/graphs.md).
     - **post-order traversal**: useful for deletion; Left, Right, Root
 
 It's pretty easy to do traversal recursively; however, when the depth of the tree is too large, we might suffer from stack overflow! That's one of the main reasons why we would want to solve a tree problem iteratively sometimes. When using an interative solution, queues and stacks are super useful.
-![Traversing Binary Trees](../../images/traversing_trees.png)
+
+![Traversing Binary Trees](../images/traversing_trees.png)
 
 ## Top-down
 - Denotes recursive solution
