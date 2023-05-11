@@ -1,14 +1,19 @@
 
 # Web Crawler
 
-Web crawlers are useful for accomplishing the following tasks.
-1. How search engines get their data (ex. Google, Baidu)
-2. Test web page links
-3. Monitor content or structure updates on a page
-4. Mirroring 
-    - mirroring: making a copy of a website
-5. Copyright infrigement checks
+**Uses**
 
+Web crawlers are useful for accomplishing the following tasks.
+- How search engines get their data (ex. Google, Baidu)
+- Test web page links
+- Monitor content or structure updates on a page
+- Mirroring 
+    - mirroring: making a copy of a website
+- Copyright infrigement checks
+
+This specific solution does not attempt to address both the crawler AND a use case above. It is only attempting to address the crawler design.
+
+**Design Specifications Needed to Pass this Interview**
 Here are the specific sections you will need to address in a web crawler system design interview.
 1. [Ask questions](#ask-questions)
 2. [Functional Requirements](#functional-requirements)
@@ -50,7 +55,7 @@ You are asking questions to clarify the requirements and constraings of the syst
 
 ## Functional Requirements
 
-_what the system does_
+_What the system does..._
 
 These requirements determine the function an application (or part of an application) should perform.
 
@@ -69,7 +74,7 @@ Examples of potential functional requirements for a web crawler
 
 ## Non-functional Requirements
 
-_how the system does it_
+_How the system does it..._
 
 These requirements determine performance and quality standards.
 
@@ -116,12 +121,6 @@ Resource estimations help us compute all of the estimations that come after it. 
 
 Use google to do the calculations for you.
 
-<style>
-tr:nth-child(odd) {
-  background-color: #b2b2b2;
-  color: #f4f4f4;
-}
-</style>
 
 | |
 | ---- |
@@ -134,16 +133,96 @@ tr:nth-child(odd) {
 | ~6.2 PB |
 
 ### Traversal Estimation
+
+Scenario 1 Assumptions:
+- AVG https traversal per web page is 45 seconds
+- We have 1 crawler
+- 3 Billion Web Pages (from above)
+
+||
+| ---- |
+| # of Web Pages x AVG HTTPs traversal per web page|
+| 3 billion x 45 seconds => 0.135 billion seconds => 4.3 years|
+
+
+Scenario 2 Assumptions
+- AVG https traversal per web page is 45 seconds
+- We have 5 crawlers
+- 3 Billion Web Pages (from above)
+
+_Divide above numbers by 5._
+4.3 years/ 5 crawlers = .9 years
+
+Scenario 3 Assumptions:
+- AVG https traversal per web page is 45 seconds
+- We have to crawl all webpages in one day
+- 3 Billion Web Pages (from above)
+
+_We need to look at how many days are in a 4.3 years._
+4.3 years ~= 1571 days
+
+If we had one crawler per server, we would need 1571 servers.
+However, if our servers were multi-threaded and each server had 10 threads, 1571/10 = ~157 servers.
+
+
+
 ### Bandwidth Estimation
+
+Above we figured out we want to process ~6.2 PB of data per day.
+- 1 day = 86400 seconds
+- 6.2 PB/ 86400 ~= 72 GB per second
+- Need to converst to Gb because bandwidth is measured in bits not bytes => 72 GB ~= 576 Gb per second
+- If we have 157 servers, we need to distribute the above bandwidth to find it by server => 576 Gb per second/ 157 servers ~= 459 MB per server per second 
 
 
 ## Diagram the System
 
-![WebCrawlerBasicDiagram](https://docs.google.com/drawings/d/e/2PACX-1vS6BAMa4y_QqfJCCoKDtA03qRuektVrvxu0cGKFF7C_NUmQ6SiAU8ySr75mqJrBX7UKJsnNiR6epwzl/pub?w=960&h=720)
+Very Basic System
+![WebCrawler1](https://docs.google.com/drawings/d/e/2PACX-1vS6BAMa4y_QqfJCCoKDtA03qRuektVrvxu0cGKFF7C_NUmQ6SiAU8ySr75mqJrBX7UKJsnNiR6epwzl/pub?w=960&h=720)
+
+Slightly More Advanced System
+![WebCrawler2](https://docs.google.com/drawings/d/e/2PACX-1vRZT8NuVXd3Hv39XusnzV2sUaB3qZagwDRvdqRLQ6hGJk6yUrD7y5ESqjlYfENQLakEoQ4n-_Nh0-2u/pub?w=960&h=720)
+
+Slightly More Advanced Focusing on Prioritization and Politeness
+![WebCrawler3](https://docs.google.com/drawings/d/e/2PACX-1vSTQPKmdDurg3vbYPH1hJLSFhZfy5T7Krp0dGIdZDdsebj2x1-7TSuIOhWJ9fX-bfv1k55wlw2RmVWk/pub?w=960&h=720)
+
+
 ## Define Data Models
+
+| Metadata Table |
+|---|--|
+| id  | |
+| url | |
+
 ## Define APIs
 ## Deep Dive on Diagram Section
+
+Zooming in on Prioritization and Politeness
+![PrioritizationAndPolitenessService](https://docs.google.com/drawings/d/e/2PACX-1vSeZRceEkpbp2jmtzLKqJlZStwcqJHHBXP4shMNfAbIfea8zK-Yv0KtiQ2ZByS7wEQgMGItWsTc3Q4C/pub?w=960&h=720)
+
+Polite Feeder Service makes use of a crawl capacity limit and robots.txt files for websites.
 ## Faults and Failures
 
+General Ways to Address Faults and Failures
 - Load balancing
 - Throttling
+- Log failures and set alerts
+- Continually tes and monitor performance
+
+Solve Duplicates
+_when uniqueness is listed as a requirement_
+- hash value for each page (has limitations)
+- simhash (has limitations)
+ - simhash: an algorithm to estimate how similar to sets are
+- crawl delays
+
+
+
+## Extras
+
+Breadth-first versus Depth-first Crawlers:
+
+| | Pros | Cons|
+|--|--|--|
+| **Breadth-first**| <ul><li>comprehensive coverage of a specific domain</li><li>easily parallelizable</li></ul> |<ul><li>increased complexity through managing a queue of URLs</li><li>slower performance</li></ul>|
+| **Depth-first**| <ul><li>in depth coverage of a specific domain</li><li>faster</li></ul>| <ul><li>can miss important information that is further away from the starting URL</li><li>difficulty prioritizing pages</li> 
