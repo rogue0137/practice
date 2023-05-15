@@ -10,12 +10,11 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-const invertTree = function(root) {
+const invertTreeIterativeBFS = function(root) {
     // BFS => uses queue for iterative 
     if (!root) return root;
 
-    const queue = [];
-    queue.push(root);
+    const queue = [root];
 
     while (queue.length > 0) {
         let curr = queue.shift();
@@ -30,4 +29,30 @@ const invertTree = function(root) {
 };
 
 // Add recursive solution
+const invertTreeRecursive = function(root) {
+    if (!root) return root;
+    let left = root.left;
+    let right = root.right;
+    root.left = invertTreeRecursive(right);
+    root.right = invertTreeRecursive(left);
+    return root;
+};
+
 // Add DFS solution
+const invertTreeIterativeDFS = function(root) {
+    // DFS => uses stack for iterative 
+    if (!root) return root;
+
+    const stack = [root];
+
+    while (stack.length) {
+        let curr = stack.pop();
+        let left = curr.left;
+        let right = curr.right;
+        curr.left = right;
+        curr.right = left;
+        if (curr.left) stack.push(curr.left);
+        if (curr.right) stack.push(curr.right);
+    }
+    return root
+};
