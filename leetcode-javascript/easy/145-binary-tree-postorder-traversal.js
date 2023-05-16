@@ -14,13 +14,13 @@
 const postorderRecursiveTraversal = function(root) {
     const treeOrder = [];
 
-    const getNodevalue = ( node ) => {
+    const getNodeValue = ( node ) => {
         if (!node) return;
-        getNodevalue(node.left);
-        getNodevalue(node.right);
+        getNodeValue(node.left);
+        getNodeValue(node.right);
         treeOrder.push(node.val);
     }
-    getNodevalue(root);
+    getNodeValue(root);
     return treeOrder; 
 };
 
