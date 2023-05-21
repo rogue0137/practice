@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const assert = require('assert');
 
 /*
@@ -39,142 +38,129 @@ c.put("a", "5")
 c.put("d", "4")
 ```
 */
-
 class Node {
-  constructor(key, value) {
+  constructor(key, value){
     this.key = key;
     this.value = value;
     this.next = null;
     this.prev = null;
   }
-
 }
-
 class Cache {
-  
   constructor(maxSize) {
-    this.map = new Map();
     this.maxSize = maxSize;
-    this.head = null; // head will be last recently accessed
-    this.tail = null; // tail will be most recently accessed
+    this.currSize = 0;
+    this.map = new Map();
+    this.head = null;
+    this.tail = null;
   }
-  
-  
-  put = (key, value) => {
 
-    if (this.map.has(key)){
-      // update value
-      this.map.get(key).value = value;
-      // If the key already existed it should be removed and then readded to show it was recently accessed
-      this.deleteNode(key);
-      this.addNode(key, value);
-    } else {
-      if (this.map.size >= this.maxSize) {
-        // remove the head
-        const leastRecentlyAccessedKey = this.head.key;
-        this.deleteNode(leastRecentlyAccessedKey);
-        this.map.delete(leastRecentlyAccessedKey);
-      }
-      // Add new node and then add to the map
-      this.addNode(key, value);
-      this.map.set(key, this.tail); 
+  get(key) {
+    const node = this.map[key];
+
+    if (node === undefined){
+      return 'Error';
     }
     
-  }
-  
-  get = (key) => {
-    // Check for key existence
-    if (!this.map.has(key)) {
-      return "Error";
-    } 
-
-    const value = this.map.get(key).value;
-    // Since this key/value pair was accessed it should be
-    // moved to last to show it was recently accessed.
-    this.deleteNode(key);
-    this.addNode(key, value);
-
-    return value;
+    // put node at the end
+    this.moveNodeToEnd(node);
     
+    const value = this.map[key].value;
+
+    return value ;
   }
 
-  // Recently accessed nodes will be moved by
-  // deleting them and then re-adding them.
-  addNode = (key, value) => {
+
+  put(key, value) {
+
+    if (this.map[key]) {
+      this.map[key].value = value;
+      // move node to end
+      this.moveNodeToEnd(this.map[key]);
+    } else {
+      // add node 
+      this.addNode(key, value);
+    }
+  }
+
+  addNode(key, value) {
     const node = new Node(key, value);
 
-    if (this.tail === null) {
-      // no nodes yet, so make it the head
+    // Check for head, if it doesn't exist
+    // Make this node the head
+    const prevHead = this.head;
+    if (prevHead === null) {
       this.head = node;
-    } else {
-      this.tail.next = node;
-      node.prev = this.tail;
+    } 
+    if (this.currSize === this.maxSize) {
+      const currHead = this.head
+      const newHead = currHead.next;
+      this.head = newHead;
+      this.head.prev = null;
+      delete this.map[currHead.key];
+      this.currSize--;
     }
-
-    // regardless of the above, ensure it becomes the tail
+    const prevTail = this.tail;
+    // Check for tail, if it doesn't exist
+    // Make this node the tail
+    // else update the tail to be this node
+    // Move it to the end
+    if (prevTail){
+      prevTail.next = node;
+      this.tail = node;
+      this.tail.prev = prevTail;
+    } else {
+      this.tail = node;
+    }
+    this.map[key] = node;
+    this.currSize++;
+  }
+    
+  moveNodeToEnd(node) {
+    // if node is head, make next node the head
+    if (this.head === node){
+      this.head = node.next;
+      this.head.prev = null;
+    } else {
+      const prevNode = node.prev; 
+      prevNode.next = node.next;
+    }
+    
+    if (this.tail !== node){
+      const prevTail = this.tail;
+      prevTail.next = node;
+      node.prev = prevTail;   
+    }
+    
+    node.next = null;
     this.tail = node;
-  }
-
-  // Delete?
-  deleteNode = (key) => {
-    const node = this.map.get(key);
-
-    // Prev pointer
-    if (node.prev === null || node.prev === undefined) {
-      // if there are no previous nodes, set this node's next to the head
-      this.head = node?.next;
-    } else {
-      node.prev.next = node.next
     }
 
-    // Next pointer
-    if (node.next === null || node.prev === undefined) {
-      // if there are no later nodes, set this node's prev as the tail
-      this.tail = node?.prev
-    } else {
-      node.next.prev = node.prev
-    }
-  
-  }
-  
 }
 
 // where 3 is maxSize
-const c = new Cache(3)
-c.put("a", "1") // evicted
-c.put("b", "2")
-c.put("c", "3")
-c.put("d", "4")
+const c = new Cache(3);
+c.put("a", "1"); // evicted
+c.put("b", "2");
+c.put("c", "3");
+c.put("d", "4");
 assert.equal(c.get("a"), "Error");
 
-c.put("a", "1")
-c.put("b", "2") // evicted
-c.put("c", "3")
+c.put("a", "1");
+c.put("b", "2"); // evicted
+c.put("c", "3");
 assert.equal(c.get("a"), "1");
-c.put("d", "4")
+c.put("d", "4");
 assert.equal(c.get("b"), "Error");
 
-c.put("a", "1")
-// c.put("b", "2") // evicted
-// c.put("c", "3")
-// c.put("a", "5")
-// c.put("d", "4")
-// assert.equal(c.get("b"), "Error");
+c.put("a", "1");
+c.put("b", "2"); // evicted
+c.put("c", "3");
+c.put("a", "5");
+c.put("d", "4");
+assert.equal(c.get("b"), "Error");
+assert.equal(c.get("a"),5); // Added assertion to test that value for Node A wa actually updated
 
-/* 
-Hi, Jameel,
-
-Thank you for the opportunity to continue working on this problem.
-I got everything up to line 157 to pass. However, when I got to 158, I kept getting:
-
-solution.js:123
-    if (node.prev === null || node.prev === undefined) {
-             ^
-
-TypeError: Cannot read properties of undefined (reading 'prev')
-
-I trouble shooted for a bit, but have to go pick up the kids now. 
-
-Have a lovely vacation!
-~Krys
-*/
+// console.log('HEAD: ', c.head);
+// console.log('TAIL: ', c.tail);
+// console.log('MAP: ', c.map);
