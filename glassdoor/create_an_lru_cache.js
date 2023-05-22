@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 /*
 Design an cache with a configurable maximum size and the following properties:
 
@@ -37,7 +35,14 @@ c.put("c", "3")
 c.put("a", "5")
 c.put("d", "4")
 ```
+Run using:
+```bash
+node glassdoor/create_an_lru_cache.js
+```
 */
+const assert = require('assert');
+
+
 class Node {
   constructor(key, value){
     this.key = key;
@@ -62,7 +67,6 @@ class Cache {
       return 'Error';
     }
     
-    // put node at the end
     this.moveNodeToEnd(node);
     
     const value = this.map[key].value;
@@ -74,11 +78,12 @@ class Cache {
   put(key, value) {
 
     if (this.map[key]) {
+
       this.map[key].value = value;
-      // move node to end
       this.moveNodeToEnd(this.map[key]);
+
     } else {
-      // add node 
+
       this.addNode(key, value);
     }
   }
@@ -86,12 +91,11 @@ class Cache {
   addNode(key, value) {
     const node = new Node(key, value);
 
-    // Check for head, if it doesn't exist
-    // Make this node the head
     const prevHead = this.head;
     if (prevHead === null) {
       this.head = node;
     } 
+
     if (this.currSize === this.maxSize) {
       const currHead = this.head
       const newHead = currHead.next;
@@ -100,11 +104,8 @@ class Cache {
       delete this.map[currHead.key];
       this.currSize--;
     }
+
     const prevTail = this.tail;
-    // Check for tail, if it doesn't exist
-    // Make this node the tail
-    // else update the tail to be this node
-    // Move it to the end
     if (prevTail){
       prevTail.next = node;
       this.tail = node;
@@ -117,7 +118,7 @@ class Cache {
   }
     
   moveNodeToEnd(node) {
-    // if node is head, make next node the head
+
     if (this.head === node){
       this.head = node.next;
       this.head.prev = null;
@@ -159,7 +160,7 @@ c.put("c", "3");
 c.put("a", "5");
 c.put("d", "4");
 assert.equal(c.get("b"), "Error");
-assert.equal(c.get("a"),5); // Added assertion to test that value for Node A wa actually updated
+assert.equal(c.get("a"),5); // Added assertion to test that value for Node A was actually updated
 
 // console.log('HEAD: ', c.head);
 // console.log('TAIL: ', c.tail);
