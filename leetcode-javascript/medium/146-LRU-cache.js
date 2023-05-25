@@ -27,3 +27,5 @@
 // cache.get(1);       // returns -1 (not found)
 // cache.get(3);       // returns 3
 // cache.get(4);       // returns 4
+
+// ANSWER: See /glassdoor/create_an_lru_cache.js
