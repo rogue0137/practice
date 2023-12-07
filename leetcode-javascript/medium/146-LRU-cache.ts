@@ -34,7 +34,6 @@ class LRUCache {
 
         // if already exists, update value
         if (this.map.has(key)) {
-            // if at max size, find value in queue and remove it
             this.map.set(key, value);
             // find value in queue and remove it
             const indexOfKey = this.order.indexOf(key);

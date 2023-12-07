@@ -2,12 +2,17 @@
 
 Interview Checklist
 - [ ] Functional Requirements
+    - ask "Who is the user?"
 - [ ] Non-functional Requirements
 - [ ] Estimates
-- [ ] Diagram the System
+- [ ] Diagram the System 
+    - Dig you go through the whole flow?
+    - Did you talk about tradeoffs out loud?
 - [ ] Define Data Models
+    - Are you thinking of the entire lifecycle of the model?
 - [ ] Define APIs
 - [ ] Deep Dive on Diagram Section
+    - What happens if a component goes down?
 - [ ] Faults, Failures, and Followups
 
 Core system designs concepts

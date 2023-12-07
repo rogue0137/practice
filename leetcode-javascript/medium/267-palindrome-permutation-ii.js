@@ -69,10 +69,7 @@ const generatePalindromes = function(s) {
         }  
     }
 
-    // 9. Return the palindromicPermutations as an array
-    const arrayOfPalindromicPermutations = Array.from(palindromicPermutations);
-
-    return arrayOfPalindromicPermutations;
+    return palindromicPermutations;
 };
 
 // 6. Function to actually create palindromicPermutations
@@ -80,7 +77,7 @@ const generatePalindromes = function(s) {
 // Remember that string below will be the halfString
 const getPermutations = function(string, prefix = '') {
     if (string.length <= 1 ) {
-        return new Set([prefix + string]);
+        return [prefix + string];
     } else {
         let permutations = new Set();
         // Iterate through all of the halfString letters

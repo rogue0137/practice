@@ -17,14 +17,13 @@ const uniquePathsWithObstaclesDFS = function(obstacleGrid) {
         }
         
         const currSpace = grid[col][row];
-        // console.log(`currSpace: ${currSpace}`);
         
         // check for obstacle
         if (currSpace === 1) {
             return;
         }
         // check if we are at the end
-        // can the end be blocked? do I have to check that it's a 0? yes
+        // can the end be blocked? do I have to check that it's a 0? yes, see above
         if (col === colLen - 1 && row === rowLen - 1) {
             uniquePaths += 1;
             return;

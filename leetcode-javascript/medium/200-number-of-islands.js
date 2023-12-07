@@ -48,8 +48,8 @@ const numIslands = function(grid) {
             }
         
         // check that we haven't visited this space before
-        // confirm this space is not water, but an island
         const hasBeenVisited = visitedGrid[col][row];
+        // confirm this space is not water, but an island
         const isWater = grid[col][row] === '0';
 
         if (hasBeenVisited || isWater) {
