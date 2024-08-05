@@ -1,19 +1,54 @@
 # Weekly Learnings: July29toAugust2
 
 ![gorilla on computer](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnY2Mmg4dHloNGlydWNsZ3Y3bzI2dXB4bGRyYnd1cDRrbHowYzY1dSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/QNFhOolVeCzPQ2Mx85/giphy.gif)
+
 ## New and Reviewed Weekly Problems
-- [apple_stocks](interview_cake/2024/July28toAugust2/apple_stocks.py)
-- [cafe_order_checker](interview_cake/2024/July28toAugust2/cafe_order_checker.py)
-- [inflight_entertainment](interview_cake/2024/July28toAugust2/inflight_entertainment.py)
-- [merge_calendar_tool](interview_cake/2024/July28toAugust2/merge_calendar_tool.py)
-- [merge_sorted_lists](interview_cake/2024/July28toAugust2/merge_sorted_lists.py)
-- [palindrome_permutation](interview_cake/2024/July28toAugust2/palindrome_permutation.py)
-- [product_of_all_other_numbers](interview_cake/2024/July28toAugust2/reverse_list_of_characters.py)
-- [reverse_list_of_characters](interview_cake/2024/July28toAugust2/reverse_list_of_characters.py)
-- [reverse_words](interview_cake/2024/July28toAugust2/reverse_words.py)
-- [word_cloud](interview_cake/2024/July28toAugust2/word_cloud.py)
+- [apple_stocks](apple_stocks.py)
+- [cafe_order_checker](cafe_order_checker.py)
+- [inflight_entertainment](inflight_entertainment.py)
+- [merge_calendar_tool](merge_calendar_tool.py)
+- [merge_sorted_lists](merge_sorted_lists.py)
+- [palindrome_permutation](palindrome_permutation.py)
+- [product_of_all_other_numbers](product_of_all_other_numbers.py)
+- [reverse_list_of_characters](reverse_list_of_characters.py)
+- [reverse_words](reverse_words.py)
+- [word_cloud](word_cloud.py)
+
+## Tracking Weak Spots
+
+
+- Don't forget to discuss tradeoffs in the leetcode problems too
+- Greedy algorithms:
+    - I had A LOT of trouble with highest_product_of_three
+    - I had a lot of trouble using efficient methods for product_of_all_other_numbers
+    - I don't remember how hard random_shuffle was, but let's do it again for good measure
+- Binary Search:
+    - I had a lot of trouble figuring out where first_index and last_index should start. Each problem was different and I failed to get it right every time.
+- NO graphs until the above two are internalized!
+
+
+## To Do List
+
+- [ ] Need to practice creating a hash table without collisions from a class
+- [ ] Answer questions in [inflight_entertainment](inflight_entertainment.py)
+- [ ] Answer bonus questions in [word_cloud](word_cloud.py) (greedy algorithm)
+- [ ] Figure out highest_product_of_three and its various iterations (greedy algorithm)
+- [ ] Redo [product_of_all_other_numbers](product_of_all_other_numbers.py) to make sure it's internalized
+- [ ] Redo find_rotation_point (binary search)
+- [ ] Redo find_repeat (binary search)
+- [ ] Redo sort_scores (binary search)
+- [ ] Redo merge_meeting_times (binary search)
+
 
 ## Patterns
+
+### Inflight Entertainment
+
+- Don't forget sets can be helpful
+
+### Reverse Anything
+
+- Switch the first and last index. +1 first index and -1 last index until first index is no longer less than last index. Ta da! You've reversed all the things.
 
 ### Merging Times and Saving Space
 
@@ -74,8 +109,6 @@ smallest_k_numbers = heapq.nsmallest(k, list_of_ints)
 
 ```
 
-
-## Tracking Weak Spots
 
 ## Learnings
 
@@ -158,5 +191,21 @@ heapq.heapify(max_heap)
 biggest_number_after_switch = max_heap[0]
 original_number = -biggest_number_after_switch
 ```
+- Python `list.reverse()` or `string.reverse()` exist but should not be used for reverse questions. Use the pattern.
+
+- Modify in place versus create new
+
+| Original Collection Type | In-place Method | Non-modifying Counterpart |
+|--------------------------|-----------------|---------------------------|
+| List                      | `list.reverse()`   | `my_list[::-1]`            |
+| List                      | `list.sort()`      | `sorted(my_list)`          |
+| List                      | `list.append(element)` | `my_list + [element]`       |
+| List                      | `list.extend(iterable)` | `my_list + iterable`        |
+| Set                       | `set.add(element)`  | `my_set \| {element}`        |
+| Set                       | `set.update(iterable)` | `my_set \| iterable`          |
+| Dictionary                | `dict.update(iterable)` | `{**my_dict, **update_dict}` |
+| Dictionary                | `dict.pop(key, default_value_if_key_not_found)` | `my_dict.get(key, default_value_if_key_not_found)` |
+
+
 
 

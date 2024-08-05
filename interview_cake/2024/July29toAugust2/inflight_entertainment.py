@@ -56,4 +56,4 @@ def can_two_movies_fill_flight(movie_lengths, flight_length):
 # QUESTION 2: What if we wanted to fill the flight length as nicely as possible with any number of movies (not just 2)?
 # ANSWER: Same as above, more questions! Do we want to put in as many movies as possible? Give a list of options?
 
-# QUESTION3: What if we knew that movie_lengths was sorted? Could we save some space and/or time?
+# QUESTION 3: What if we knew that movie_lengths was sorted? Could we save some space and/or time?

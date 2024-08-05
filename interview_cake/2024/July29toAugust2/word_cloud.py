@@ -26,7 +26,7 @@ def test_ellipses_between_words(self):
     word_cloud = WordCloudData(input)
     actual = word_cloud.words_to_counts
 
-    expected = {'Mmm': 2, 'decisions': 2}
+    expected = {'mmm': 2, 'decisions': 2}
     self.assertEqual(actual, expected)
 
 # I changed it to the following because based on the example in the question, we could use "Add" or "add"
