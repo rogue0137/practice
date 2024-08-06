@@ -30,10 +30,10 @@
 ## To Do List
 
 - [ ] Need to practice creating a hash table without collisions from a class
-- [ ] Answer questions in [inflight_entertainment](inflight_entertainment.py)
+- [x] Answer questions in [inflight_entertainment](inflight_entertainment.py)
 - [ ] Answer bonus questions in [word_cloud](word_cloud.py) (greedy algorithm)
 - [ ] Figure out highest_product_of_three and its various iterations (greedy algorithm)
-- [ ] Redo [product_of_all_other_numbers](product_of_all_other_numbers.py) to make sure it's internalized
+- [x] Redo [product_of_all_other_numbers](product_of_all_other_numbers.py) to make sure it's internalized
 - [ ] Redo find_rotation_point (binary search)
 - [ ] Redo find_repeat (binary search)
 - [ ] Redo sort_scores (binary search)
