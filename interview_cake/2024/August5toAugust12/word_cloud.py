@@ -69,8 +69,8 @@ class WordCloudData(object):
     def __init__(self, input_string):
         self.input_string = input_string
         self.words_to_counts = {}
-        self.word_pairs = {}  # To store word pairs and their counts
-        self.count_words_and_pairs()  # Call the enhanced method to count words and identify pairs
+        self.word_pairs = {}  
+        self.count_words_and_pairs() 
 
     def deal_with_punctuation(self, word):
         # Normalize case
@@ -119,8 +119,21 @@ class WordCloudData(object):
     def identify_phrases(self):
         # Simple heuristic: pairs occurring more than twice as phrases
         # You could literally pick any number. You plus your interviewer are deciding the heuristic
-        phrases = { pair: count for pair, count in self.word_pairs.items() if count > 2}
-        return phrases
+        phrases = {pair: count for pair, count in self.word_pairs.items() if count > 2}
+        
+        # Updating words_to_counts
+        for (word1, word2), count in phrases.items():
+            phrase = f"{word1} {word2}"
+            # Ensure we don't go below zero
+            self.words_to_counts[word1] = max(0, self.words_to_counts.get(word1, 0) - count)
+            self.words_to_counts[word2] = max(0, self.words_to_counts.get(word2, 0) - count)
+            # Add or update the phrase in words_to_counts
+            self.words_to_counts[phrase] = count
+            # Remove word1 and word2 if their count is now zero
+            if self.words_to_counts[word1] == 0:
+                del self.words_to_counts[word1]
+            if self.words_to_counts[word2] == 0:
+                del self.words_to_counts[word2]
 
 
 
@@ -130,3 +143,22 @@ class WordCloudData(object):
 #   could use the python methods related to those.
 
 # QUESTION 5: How would you avoid having duplicate words that are just plural or singular possessives?
+# ANSWER: You can add some simplified normallization in deal_with_punctuation(), e.g. 
+
+def deal_with_punctuation(self, word):
+        # Normalize case and handle plural/possessive forms
+        word = word.lower()
+        if word.endswith("s", "'s"):
+            word = word[:-1]  # Remove trailing 's' or "'s" for plural/possessive forms
+        if word.endswith("'"):
+            word = word[:-1]  # Remove apostrophe for possessives
+        
+        # Check if the word exists in the dictionary
+        if self.words_to_counts.get(word) is not None:
+            self.words_to_counts[word] += 1
+        else:
+            self.words_to_counts[word] = 1
+
+# However, this doesn't really solve for irregulars or other cases like that.
+# If we had a dictionary of all plurals (keys) and singulars (value), we 
+# could use this. If we don't have this dictionary, it'd be best to use an NLP library.

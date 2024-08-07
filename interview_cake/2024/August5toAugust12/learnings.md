@@ -16,11 +16,54 @@ lowest_num = min(list_of_ints[0], list_of_ints[1])
 for current_number in list_of_ints[2:]:
     # do the thing
 ```
+- I am misunderstanding the notion of ranges and how numbers fit into them. Pay closer attention. Read better. Think harder. 
 
 ## To Do List
 - [ ] Solve [product_of_all_other_numbers](product_of_all_other_numbers.py) using division. Watchout for 0s!
 - [ ] Solve [inflight_entertainment](inflight_entertainment.py) question #2 using dynamic programming. ( _Carry this TODO over until you get to the dynamic programming section._)
+- [ ] Redo find_rotation_point (binary search)
+- [ ] Redo find_duplicate (binary search)
 
 ## Patterns
 
+### Rotation Point in Binary Search
+- When applying binary search to find the rotation point, comparing each word with the first word leverages the sorted characteristic of the array segments because:
+  - all elements before the rotation point are greater than or equal to the first element
+  - all elements after the rotation point are less than the first element
+  - simpler than comparing elements to adjacent elements; simply compare all elements to the first one!
+  - despite the rotation, the array still exhibits a predictable pattern relative to the first element
+
+
+### Finding Duplicates using Binary Search
+- Binary search here works by cutting the problem in half after figuring out which half of our input list holds the answer
+- Your list is not allowed to be sorted according to the prompt!
+- If it tells you your range is 1...N, this is a signal your floor should start at 1. If the range was 0...N, you would start your floor at 0.
+
+### Sorting
+
+Here's a TLDR of Sorting Algorithms and Strategies:
+- Time Complexities of: O(n + k)
+    - Counting: Used in Sort Scores
+-  Time Complexities of : O(n^2)
+    - Bubble Sort: repeatedly swaps adjacent elements if they are in the wrong order until the entire list is sorted. It's easy to understand and implement but inefficient for large datasets due to its quadratic time complexity
+    - Insertion Sort --> _fill out if you actually see it used in Leetcode_
+    - Selection Sort --> _fill out if you actually see it used in Leetcode_
+    - Quick Sort --> is O(n^2) in worst case (see below)
+- Time Complexities of: O(n log n)
+    - Quick Sort: employs a divide-and-conquer strategy, selecting a pivot element, partitioning the list around the pivot, and recursively sorting the sublists
+    - Merge Sort: uses a divide-and-conquer strategy, dividing the list into smaller sublists, sorting each sublist, and then merging them into a single sorted list.
+    - Heap Sort: Heap sort constructs a binary heap data structure from the input list and uses it to sort the elements.
+
+
+
+
 ## Learnings
+- Divide and Conquer Strategy Steps:
+    1. Divide problem into smaller subproblems
+    2. Conquer each subproblem
+    3. Combine solutions to solve original problem
+- If you want to check if a character is alphanumeric, you can also do that in Python! We've already used `thing.isalpha()`. However, some words have both numbers and letters, e.g. usernames. We would use `thing.isalnum()` to determine whether username `rogue0137` was alphanumeric or not.
+- An empty string evaluates to False in python. So if I set `current_word = ''` and then checked `if current_word`, it would return false. 
+- O (N Log N), a.k.a. sorting, is bigger than O (Log N).
+![Big0](BigO.webp)
+- The **pigeon hole principle** states states that if n items are put into m containers, with n > m, then at least one container must contain more than one item. For example, there must be at least two left gloves or two right gloves in a group of three gloves.
