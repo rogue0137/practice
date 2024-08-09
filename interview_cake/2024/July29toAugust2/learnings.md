@@ -29,15 +29,13 @@
 
 ## To Do List
 
-- [ ] Need to practice creating a hash table without collisions from a class
 - [x] Answer questions in [inflight_entertainment](inflight_entertainment.py)
 - [x] Answer bonus questions in [word_cloud](word_cloud.py) (greedy algorithm)
-- [ ] Figure out highest_product_of_three and its various iterations (greedy algorithm)
+- [x] Figure out highest_product_of_three and its various iterations (greedy algorithm) --> Tried it again. Didn't go well. Continued into next TODO list
 - [x] Redo [product_of_all_other_numbers](product_of_all_other_numbers.py) to make sure it's internalized
 - [x] Redo find_rotation_point (binary search)
 - [x] Redo find_duplicate (binary search)
 - [x] Redo sort_scores (sorting)
-- [ ] Redo merge_meeting_times (binary search)
 
 
 ## Patterns

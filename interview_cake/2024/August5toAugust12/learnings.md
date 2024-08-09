@@ -3,9 +3,23 @@
 ![husband feeds me while i work](https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif?cid=790b7611aapmshy0toe5i2qtuyunfryjj3k4fvh9vn8g6we8&ep=v1_gifs_search&rid=giphy.gif&ct=g)
 
 ## New and Reviewed Weekly Problems
+Interview Cake
+- [find_duplicates](./find_duplicate.py)
+- [in_place_shuffle](./in_place_shuffle.py)
+- [inflight_entertainment](./inflight_entertainment.py)
+- [product_of_all_other_numbers](./product_of_all_other_numbers.py)
+- [sort_scores](./sort_scores.py)
+- [word_cloud](./word_cloud.py)
+
+Leetcode Greedy Algo practice
+- [609_can_place_flowers](../../../leetcode_python/2024/easy/609_can_place_flowers.py)
+- [680_valid_palindrome_ii.py](../../../leetcode_python/2024/easy/680_valid_palindrome_ii.py)
+- [857_mininum_cost_to_hire_k_workers](../../../leetcode_python/2024/hard/857_minimum_cost_to_hire_k_workers.py)
+- [122_best_time_to_buy_and_seel_stock_ii](../../../leetcode_python/2024/medium/122_best_time_to_buy_and_sell_stock.py)
+- [137_gas_station](../../../leetcode_python/2024/medium/137_gas_station.py)
 
 ## Tracking Weak Spots
-
+- I am really, really, struggling to understand what exactly the problem is asking me to do. I have the gist of greedy algos down pat enough to explain to others. I can even use google draw to show patterns. I am having extreme difficulty translating patterns to code. I am also having trouble understanding WHICH variables should be greedy. 
 - I keep forgetting that when trying to get the highest number or lowest number AND THEN iterating through the list, I should actually do something like this:
 ```Python
 highest_num = max(list_of_ints[0], list_of_ints[1])
@@ -22,7 +36,10 @@ for current_number in list_of_ints[2:]:
 - [ ] Solve [product_of_all_other_numbers](product_of_all_other_numbers.py) using division. Watchout for 0s!
 - [ ] Solve [inflight_entertainment](inflight_entertainment.py) question #2 using dynamic programming. ( _Carry this TODO over until you get to the dynamic programming section._)
 - [ ] Redo find_rotation_point (binary search)
+- [ ] Redo merge_meeting_times (binary search)
 - [ ] Redo find_duplicate (binary search)
+- [ ] Try another Leetcode Greedy Algo
+- [ ] Need to practice creating a hash table without collisions from a class
 
 ## Patterns
 
@@ -53,8 +70,6 @@ Here's a TLDR of Sorting Algorithms and Strategies:
     - Quick Sort: employs a divide-and-conquer strategy, selecting a pivot element, partitioning the list around the pivot, and recursively sorting the sublists
     - Merge Sort: uses a divide-and-conquer strategy, dividing the list into smaller sublists, sorting each sublist, and then merging them into a single sorted list.
     - Heap Sort: Heap sort constructs a binary heap data structure from the input list and uses it to sort the elements.
-
-
 
 
 ## Learnings
