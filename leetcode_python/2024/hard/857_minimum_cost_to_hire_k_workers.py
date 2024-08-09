@@ -10,7 +10,7 @@ from typing import List
 class Solution:
     def mincostToHireWorkers(self, quality: List[int], wage: List[int], k: int) -> float:
         
-        # Sort workers by wage-to-quality ratio
+        # Sort workers by wage-to-quality ratio: w / q
         workers = sorted([(w / q, q) for w, q in zip(wage, quality)])
       
         min_cost = float('inf')
