@@ -38,7 +38,11 @@ class Solution:
                 
 
             if len(max_heap) == k:
+                # With workers sorted by their wage-to-quality ratio, the current worker's ratio becomes key for calculating the group's total cost.
+                # It sets the pay rate, ensuring proportional pay across the board. Multiplying by total_quality adjusts this rate for each worker's quality.
+                # This step checks if hiring these k workers is our best bet so far, updating min_cost if it beats previous options.
                 min_cost = min(min_cost, ratio * total_quality)
+
       
         return min_cost
 
