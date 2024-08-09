@@ -17,9 +17,10 @@ Leetcode Greedy Algo practice
 - [857_mininum_cost_to_hire_k_workers](../../../leetcode_python/2024/hard/857_minimum_cost_to_hire_k_workers.py)
 - [122_best_time_to_buy_and_seel_stock_ii](../../../leetcode_python/2024/medium/122_best_time_to_buy_and_sell_stock.py)
 - [137_gas_station](../../../leetcode_python/2024/medium/137_gas_station.py)
+- [11_container_with_most_water](../../../leetcode_python/2024/medium/11_container_with_most_water.py)
 
 ## Tracking Weak Spots
-- I am really, really, struggling to understand what exactly the problem is asking me to do. I have the gist of greedy algos down pat enough to explain to others. I can even use google draw to show patterns. I am having extreme difficulty translating patterns to code. I am also having trouble understanding WHICH variables should be greedy. 
+- I am really, really, struggling to understand what exactly the problem is asking me to do. I have the gist of greedy algos down pat enough to explain to others. I can even use google draw to show patterns. I am having extreme difficulty translating patterns to code. I am also having trouble understanding WHICH variables should be greedy. Using Leetcode hint's has helped.
 - I keep forgetting that when trying to get the highest number or lowest number AND THEN iterating through the list, I should actually do something like this:
 ```Python
 highest_num = max(list_of_ints[0], list_of_ints[1])
