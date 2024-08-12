@@ -38,7 +38,7 @@ class Solution:
         # identified point allows you to not only complete the circuit but also overcome any accumulated
         # deficits. 
         # If cummulative_gas + debt >= 0, it means you have enough gas to compensate for any deficits 
-        # encountered along the way, validating the starting point.
+        # encountered along the way, validating that your starting point works!
         if cummulative_gas + debt >= 0:
             return starting_point
         else:
