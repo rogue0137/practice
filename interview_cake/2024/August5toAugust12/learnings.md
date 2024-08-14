@@ -3,7 +3,8 @@
 ![husband feeds me while i work](https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif?cid=790b7611aapmshy0toe5i2qtuyunfryjj3k4fvh9vn8g6we8&ep=v1_gifs_search&rid=giphy.gif&ct=g)
 
 ## New and Reviewed Weekly Problems
-Interview Cake
+
+### Interview Cake
 - [find_duplicates](./find_duplicate.py)
 - [in_place_shuffle](./in_place_shuffle.py)
 - [inflight_entertainment](./inflight_entertainment.py)
@@ -11,7 +12,7 @@ Interview Cake
 - [sort_scores](./sort_scores.py)
 - [word_cloud](./word_cloud.py)
 
-Leetcode Greedy Algo practice
+### Leetcode Greedy Algo practice
 - [609_can_place_flowers](../../../leetcode_python/2024/easy/609_can_place_flowers.py)
 - [680_valid_palindrome_ii.py](../../../leetcode_python/2024/easy/680_valid_palindrome_ii.py)
 - [857_mininum_cost_to_hire_k_workers](../../../leetcode_python/2024/hard/857_minimum_cost_to_hire_k_workers.py)
@@ -35,10 +36,10 @@ for current_number in list_of_ints[2:]:
 
 ## To Do List
 - [ ] Solve [product_of_all_other_numbers](product_of_all_other_numbers.py) using division. Watchout for 0s!
-- [ ] Solve [inflight_entertainment](inflight_entertainment.py) question #2 using dynamic programming. ( _Carry this TODO over until you get to the dynamic programming section._)
-- [ ] Redo find_rotation_point (binary search)
-- [ ] Redo merge_meeting_times (binary search)
-- [ ] Redo find_duplicate (binary search)
+- [x] Solve [inflight_entertainment](inflight_entertainment.py) question #2 using dynamic programming. ( _Carry this TODO over until you get to the dynamic programming section._)
+- [x] Redo find_rotation_point (binary search)
+- [ ] Redo find_duplicate (binary search, check that this is BS)
+- [ ] Redo merge_meeting_times (binary search, check that this is BS)
 - [ ] Try another Leetcode Greedy Algo
 - [ ] Need to practice creating a hash table without collisions from a class
 
