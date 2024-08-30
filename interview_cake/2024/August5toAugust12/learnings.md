@@ -34,11 +34,15 @@ for current_number in list_of_ints[2:]:
 ```
 - I am misunderstanding the notion of ranges and how numbers fit into them. Pay closer attention. Read better. Think harder. 
 
+
+
 ## To Do List
+__going to just start carrying over todos and adding to list in new week__
+
 - [ ] Solve [product_of_all_other_numbers](product_of_all_other_numbers.py) using division. Watchout for 0s!
 - [x] Solve [inflight_entertainment](inflight_entertainment.py) question #2 using dynamic programming. ( _Carry this TODO over until you get to the dynamic programming section._)
 - [x] Redo find_rotation_point (binary search)
-- [ ] Redo find_duplicate (binary search, check that this is BS)
+- [x] Redo find_duplicate (binary search)
 - [ ] Redo merge_meeting_times (binary search, check that this is BS)
 - [ ] Try another Leetcode Greedy Algo
 - [ ] Need to practice creating a hash table without collisions from a class

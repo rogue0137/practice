@@ -11,7 +11,15 @@
 - [hard/4_median_of_two_sorted_arrays](../../../leetcode_python/2024/hard/4_median_of_two_sorted_arrays.py)
 - [33_search_rotated_sorted_array.py](../../../leetcode_python/2024/medium/33_search_rotated_sorted_array.py)
 
+### Leetcode Binary Search Tree Practice
+- []
 ## Tracking Weak Spots 
+
+I need to go back to basics.
+
+### Binary Search Trees
+
+- I keep trying to use stacks and queues when they are unnecessary for solving the problem. **Sometimes you really can just use a secondary function and pointers**.
 
 ### Graphs
 - I feel more comfortable using recursive functions for DFS and BFS. Goal is to get as comfortable with iterative approaches.
@@ -44,10 +52,32 @@ low = midpoint + 1
     # midpoint
     # reset low or high -/+
 ```
+- However, sometimes we really will set to mid instead of mid +/- 1.
 
 ## To Do List
+
+- [x] Redo find_rotation_point (binary search)
+
+8/15
+- [x] Solve highest_product_of_three but for 4 numbers
+- [X] Spend time with Interview Cake Tree Problems
+- [x] Redo find_duplicate (binary search)
+
+8/16
+- [ ] Do only easy greedy algo, binary search and binary search tree problems to make sure I understand the foundations
+
+For next week?
+- [ ] Redo binary search tree checker
+- [ ] Redo find second largest element in binary search tree
+- [ ] Read this editorial: https://leetcode.com/problems/find-the-duplicate-number/editorial/
+- [ ] Solve [product_of_all_other_numbers](product_of_all_other_numbers.py) using division. Watchout for 0s!
+- [ ] Solve highest_product_of_three, but for K numbers
 - [ ] Solve [inflight_entertainment](inflight_entertainment.py) question #2 using dynamic programming. ( _Carry this TODO over until you get to the dynamic programming section._)
 - [ ] Solve balanced_binary_tree with no help.
+- [ ] Do a new leetcode binary search problem
+- [ ] Redo merge_meeting_times (binary search, check that this is BS)
+- [ ] Try another Leetcode Greedy Algo
+- [ ] Need to practice creating a hash table without collisions from a class
 
 ## Patterns
 
