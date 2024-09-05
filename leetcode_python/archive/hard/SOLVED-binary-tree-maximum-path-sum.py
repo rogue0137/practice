@@ -6,11 +6,11 @@
 
 # IF YOU'RE COMING FROM WWC: THIS IS THE CODE I WROTE FROM OUR SESSION
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 class Solution:
     def maxPathSum(self, root: TreeNode) -> int:
         # max_sum_of_all_branches is our max_sum from the diagram
@@ -19,7 +19,7 @@ class Solution:
         max_lateral_branch, max_sum = self.DFS(root)
         
         return max_sum
-​
+    
     def DFS(self, node):
         # Go all the way down (Depth First Search)
         # POSTORDER: left -> right -> root
@@ -54,7 +54,7 @@ class Solution:
         # CREATE A TRIANGLE: LLB, RSB, node.val
         curr_triangle = LLB + RLB + node.val
         max_branch = max(max_lateral_branch, curr_triangle)
-​
+
         # MAX SUM in our diagram
         # LMIT: is the node.left child's lateral and triangle biggest?
         # RMIT: is the node.right child's lateral and triangle biggest?
