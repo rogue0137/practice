@@ -19,7 +19,7 @@ class TreeNode:
 # - bottom up approach
 # - houses_with_computed_max_profitsization commonly used
 
-# DEFINITION: houses_with_computed_max_profitsization is an optimization technique that speeds up programs by caching the results 
+# DEFINITION: memoization is an optimization technique that speeds up programs by caching the results 
 # of expensive function calls and returning the cached result when the same inputs occur again.
 # 
 class DFSSolution:
