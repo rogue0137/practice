@@ -17,7 +17,8 @@ class TreeNode:
 # Some common patterns for Depth First Search:
 # - uses a stack
 # - bottom up approach
-# - houses_with_computed_max_profitsization commonly used
+# - memoization commonly used
+# - start left, go right, do root
 
 # DEFINITION: memoization is an optimization technique that speeds up programs by caching the results 
 # of expensive function calls and returning the cached result when the same inputs occur again.
